@@ -1,3383 +1,813 @@
-# 🌸 Django + TailwindCSS + DaisyUI Setup Guide# 🌸 Django + Tailwind CLI + DaisyUI Setup Guide# 🌸 Django + Tailwind CLI + DaisyUI Setup Guide
+# 🌸 Django + Tailwind CSS + DaisyUI Setup Guide 🌸
 
+![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Alpine.js](https://img.shields.io/badge/Alpine.js-8BC0D0?style=for-the-badge&logo=alpine.js&logoColor=black)
+![HTMX](https://img.shields.io/badge/HTMX-36C?style=for-the-badge&logo=htmx&logoColor=white)
 
-
-> **Complete Django setup with TailwindCSS, DaisyUI, Alpine.js, and HTMX - No Node.js required!**
-
-
-
-[![Django](https://img.shields.io/badge/Django-5.0+-green.svg)](https://www.djangoproject.com/)> **Complete setup guide for Django with TailwindCSS, DaisyUI, Alpine.js, and HTMX - All without Node.js or npm!**> **Complete setup guide for Django with TailwindCSS, DaisyUI, Alpine.js, and HTMX - All without Node.js or npm!**
-
-[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.4+-blue.svg)](https://tailwindcss.com/)
-
-[![DaisyUI](https://img.shields.io/badge/DaisyUI-4.0+-purple.svg)](https://daisyui.com/)
-
-[![Python](https://img.shields.io/badge/Python-3.10+-yellow.svg)](https://www.python.org/)
-
-[![Django](https://img.shields.io/badge/Django-5.0+-green.svg)](https://www.djangoproject.com/)[![Django](https://img.shields.io/badge/Django-5.0+-green.svg)](https://www.djangoproject.com/)
+> A modern, production-ready Django setup with Tailwind CSS, DaisyUI, Alpine.js, HTMX, and Jazzmin admin. **No Node.js or npm required!**
 
 ---
 
-[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.4+-blue.svg)](https://tailwindcss.com/)[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.4+-blue.svg)](https://tailwindcss.com/)
+## 📋 Table of Contents
 
-## 🎯 What You'll Get
-
-[![DaisyUI](https://img.shields.io/badge/DaisyUI-4.0+-purple.svg)](https://daisyui.com/)[![DaisyUI](https://img.shields.io/badge/DaisyUI-4.0+-purple.svg)](https://daisyui.com/)
-
-✅ Django 5.0+ with MySQL  
-
-✅ TailwindCSS + DaisyUI (28+ themes)  [![Python](https://img.shields.io/badge/Python-3.10+-yellow.svg)](https://www.python.org/)[![Python](https://img.shields.io/badge/Python-3.10+-yellow.svg)](https://www.python.org/)
-
-✅ Alpine.js + HTMX  
-
-✅ SEO optimized templates  
-
-✅ Dark/Light mode  
-
-✅ Auto browser reload  ------
-
-✅ Security features (Honeypot, CSRF, XSS)  
-
-
+- [Features](#-features)
+- [Prerequisites](#-prerequisites)
+- [Quick Start](#-quick-start)
+- [Installation Steps](#-installation-steps)
+- [Configuration](#-configuration)
+- [Database Setup (Optional)](#-database-setup-optional)
+- [Running the Project](#-running-the-project)
+- [Project Structure](#-project-structure)
+- [Tech Stack](#-tech-stack)
+- [Contributing](#-contributing)
+- [License](#-license)
 
 ---
 
-## 📋 Table of Contents## 📋 Table of Contents
+## ✨ Features
+
+- 🎨 **Tailwind CSS** - Utility-first CSS framework
+- 🌼 **DaisyUI** - Beautiful component library with multiple themes
+- ⚡ **Alpine.js** - Lightweight JavaScript framework
+- 🔄 **HTMX** - High-powered HTML attributes
+- 🎭 **Jazzmin** - Modern Django admin interface
+- 🔥 **Hot Reload** - Automatic browser refresh on code changes
+- 🛡️ **Honeypot** - Built-in spam protection
+- 📦 **No npm/Node.js** - Pure Python dependency management
+- 🌗 **Dark Mode** - Built-in theme switching
+
+---
+
+## 📦 Prerequisites
+
+- Python 3.10+
+- MySQL (optional, SQLite is default)
+- [uv](https://github.com/astral-sh/uv) package installer
+
+### Installing uv
+#### Windows (PowerShell)
+```bash
+powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
+```
+#### macOS/Linux
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+---
 
 ## 🚀 Quick Start
 
-
-
 ```bash
-
-# 1. Setup project- [What You'll Get](#-what-youll-get)1. [What You'll Get](#-what-youll-get)
-
 mkdir myproject && cd myproject
-
-uv init && uv venv- [Prerequisites](#-prerequisites)2. [Prerequisites](#-prerequisites)
-
-.venv\Scripts\activate
-
-- [Quick Start](#-quick-start-tldr)3. [Project Setup](#️-step-1-project-setup)
-
-# 2. Install packages
-
-uv pip install django pillow django-extensions django-cotton django-tailwind-cli honeypot mysqlclient django-htmx django-browser-reload- [Detailed Setup](#detailed-setup-steps)4. [Install Packages](#-step-2-install-all-packages-at-once)
-
-
-
-# 3. Create Django project- [DaisyUI Components](#-using-daisyui-components)5. [Create Django Project](#-step-3-create-django-project)
-
-django-admin startproject config .
-
-python manage.py startapp core- [Alpine.js Examples](#-alpinejs-examples)6. [MySQL Setup](#️-step-4-mysql-database-setup)
-
-mkdir templates static media static\css static\js static\images
-
-- [HTMX Examples](#-htmx-examples)7. [Django Settings](#️-step-5-django-settings-configuration)
-
-# 4. Setup TailwindCSS
-
-uv run manage.py tailwind setup- [Troubleshooting](#-troubleshooting)8. [TailwindCSS + DaisyUI](#-step-6-tailwindcss--daisyui-setup)
-
-uv run manage.py tailwind build
-
-- [Development Tips](#-development-tips)9. [Alpine.js & HTMX](#-step-7-alpinejs--htmx-setup)
-
-# 5. Run migrations
-
-uv run manage.py migrate- [Additional Resources](#-additional-resources)10. [Base Template](#-step-8-create-base-template-with-seo)
-
-uv run manage.py createsuperuser
-
-11. [URLs Configuration](#-step-9-configure-urls-for-static-and-media-files)
-
-# 6. Start server
-
-uv run manage.py tailwind runserver---12. [Static Files](#️-step-10-collect-static-files)
-
 ```
 
-13. [Run Migrations](#-step-11-run-migrations-and-create-superuser)
+```bash
+uv init && uv venv
+```
+## Activate virtual environment
+#### Windows PowerShell:
+```bash
+source .venv\Scripts\activate
+```
+#### macOS/Linux:
+```bash
+source .venv/bin/activate
+```
 
-Visit: **http://127.0.0.1:8000/** 🎉
+## Install dependencies
+```bash
+uv add django pillow django-extensions django-cotton django-tailwind-cli honeypot mysqlclient django-htmx django-browser-reload django-jazzmin
+```
 
-## 🎯 What You'll Get14. [Start Server](#️-step-12-run-development-server)
+## Create Django project
+```bash
+django-admin startproject config .
+```
+
+### Create core app
+```bash
+python manage.py startapp core
+```
+
+### Create required directories
+```bash
+mkdir templates, templates/core, static, static/css, media
+```
 
 ---
 
-15. [DaisyUI Components](#-step-13-using-daisyui-components)
+## 📝 Installation Steps
 
-## 📦 Installation Steps
+### Step 1: Project & Virtual Environment
 
-✅ **Django 5.0+** - Modern Python web framework  16. [Alpine.js Examples](#-step-14-alpinejs-examples)
+Create your project directory and set up the Python virtual environment:
 
-### Step 1: MySQL Database Setup
+### Create and navigate to project folder
+```bash
+mkdir myproject && cd myproject
+```
 
-✅ **TailwindCSS** - Utility-first CSS framework (no Node.js!)  17. [HTMX Examples](#-step-15-htmx-examples)
+### Initialize uv and create virtual environment
+```bash
+uv init && uv venv
+```
 
-Install MySQL from [mysql.com](https://dev.mysql.com/downloads/installer/)
+### Activate the virtual environment
+```bash
+source .venv\Scripts\activate
+```
 
-✅ **DaisyUI** - Beautiful UI components for Tailwind (28+ themes)  18. [Additional Resources](#-additional-resources)
+### Step 2: Install Dependencies
 
-```sql
+*Install all required packages in one command:*
 
-CREATE DATABASE myproject_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;✅ **Alpine.js** - Lightweight JavaScript framework  
+```bash
+uv pip install django pillow django-extensions django-cotton django-tailwind-cli honeypot mysqlclient django-htmx django-browser-reload django-jazzmin
+```
 
-CREATE USER 'myproject_user'@'localhost' IDENTIFIED BY 'your_password';
+**Packages Installed:**
+- `django` - Web framework
+- `pillow` - Image processing
+- `django-extensions` - Useful Django extensions
+- `django-cotton` - Component-based templating
+- `django-tailwind-cli` - Tailwind CSS integration
+- `honeypot` - Anti-spam protection
+- `mysqlclient` - MySQL database connector
+- `django-htmx` - HTMX integration
+- `django-browser-reload` - Live reload
+- `django-jazzmin` - Modern admin interface
 
-GRANT ALL PRIVILEGES ON myproject_db.* TO 'myproject_user'@'localhost';✅ **HTMX** - High-power tools for HTML  ---
+### Step 3: Create Django Project Structure
 
-FLUSH PRIVILEGES;
+### Create Django project (. means current directory)
+```bash
+django-admin startproject config .
+```
+### Create the core app
+```bash
+python manage.py startapp core
+```
 
-```✅ **MySQL** - Production-ready database  
+### Create necessary directories
+```bash
+mkdir templates
+mkdir templates\core
+mkdir static
+mkdir static\css
+mkdir media
+```
 
+---
 
+## ⚙️ Configuration
 
----✅ **SEO Optimized** - Comprehensive meta tags  ## 🎯 What You'll Get
+### Step 4: Update `config/settings.py`
 
+Make sure `import os` is at the top of the file, then update the following sections:
 
+#### Installed Apps
 
-### Step 2: Django Settings (`config/settings.py`)✅ **Dark/Light Mode** - Built-in theme switcher  
-
-
-
-```python✅ **Auto Reload** - Browser auto-refresh on changes  ✅ **Django 5.0+** - Modern Python web framework  
-
+```python
 INSTALLED_APPS = [
-
-    'django.contrib.admin',✅ **Security** - Honeypot, CSRF, XSS protection  ✅ **TailwindCSS** - Utility-first CSS framework (no Node.js!)  
-
+    'jazzmin',  # Must be before django.contrib.admin
+    'django.contrib.admin',
     'django.contrib.auth',
-
-    'django.contrib.contenttypes',✅ **DaisyUI** - Beautiful UI components for Tailwind  
-
+    'django.contrib.contenttypes',
     'django.contrib.sessions',
-
-    'django.contrib.messages',---✅ **Alpine.js** - Lightweight JavaScript framework  
-
+    'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # Third party✅ **HTMX** - High-power tools for HTML  
-
+    # Third-party apps
     'django_extensions',
-
-    'django_cotton',## ✅ Prerequisites✅ **MySQL** - Production-ready database  
-
+    'django_cotton',
     'django_tailwind_cli',
-
-    'honeypot',✅ **SEO Optimized** - Comprehensive meta tags  
-
+    'honeypot',
     'django_htmx',
+    'django_browser_reload',
 
-    'django_browser_reload',Before starting, make sure you have:✅ **Dark/Light Mode** - Built-in theme switcher  
-
-    # Local
-
-    'core',✅ **Auto Reload** - Browser auto-refresh on changes  
-
+    # Your apps
+    'core',
 ]
+```
 
-- **Python 3.10+** installed ([Download](https://www.python.org/downloads/))✅ **Security** - Honeypot, CSRF, XSS protection  
-
-MIDDLEWARE = [
-
-    'django.middleware.security.SecurityMiddleware',- **uv** package installer ([Install guide](https://github.com/astral-sh/uv))
-
-    'django.contrib.sessions.middleware.SessionMiddleware',
-
-    'django.middleware.common.CommonMiddleware',- **MySQL Server** ([Download](https://dev.mysql.com/downloads/installer/))---
-
-    'django.middleware.csrf.CsrfViewMiddleware',
-
-    'django.contrib.auth.middleware.AuthenticationMiddleware',- **Git** (optional, for version control)
-
-    'django.contrib.messages.middleware.MessageMiddleware',
-
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',## ✅ Prerequisites
-
-    'django_htmx.middleware.HtmxMiddleware',
-
-    'django_browser_reload.middleware.BrowserReloadMiddleware',---
-
-]
-
-Before starting, make sure you have:
-
-TEMPLATES = [
-
-    {## 🚀 Quick Start (TL;DR)
-
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-
-        'DIRS': [BASE_DIR / 'templates'],- **Python 3.10+** installed ([Download](https://www.python.org/downloads/))
-
-        'APP_DIRS': True,
-
-        'OPTIONS': {```bash- **uv** package installer ([Install guide](https://github.com/astral-sh/uv))
-
-            'context_processors': [
-
-                'django.template.context_processors.debug',# 1. Create and setup project- **MySQL Server** ([Download](https://dev.mysql.com/downloads/installer/))
-
-                'django.template.context_processors.request',
-
-                'django.contrib.auth.context_processors.auth',mkdir myproject && cd myproject- **Git** (optional, for version control)
-
-                'django.contrib.messages.context_processors.messages',
-
-                'django.template.context_processors.media',uv init
-
-            ],
-
-            'builtins': ['django_cotton.templatetags.cotton'],uv venv---
-
-        },
-
-    },.venv\Scripts\activate
-
-]
-
-## ⚙️ Step 1: Project Setup
-
-# Database
-
-DATABASES = {# 2. Install all packages
-
-    'default': {
-
-        'ENGINE': 'django.db.backends.mysql',uv pip install django pillow django-extensions django-cotton django-tailwind-cli honeypot mysqlclient django-htmx django-browser-reload### 1️⃣ Create project folder and initialize environment
-
-        'NAME': 'myproject_db',
-
-        'USER': 'myproject_user',```bash
-
-        'PASSWORD': 'your_password',
-
-        'HOST': 'localhost',# 3. Create Django projectmkdir myproject
-
-        'PORT': '3306',
-
-    }django-admin startproject config .cd myproject
-
-}
-
-python manage.py startapp coreuv init
-
-# Static & Media
-
-STATIC_URL = '/static/'mkdir templates static media static\css```
-
-STATIC_ROOT = BASE_DIR / 'staticfiles'
-
-STATICFILES_DIRS = [BASE_DIR / 'static']
-
-
-
-MEDIA_URL = '/media/'# 4. Setup TailwindCSS### 2️⃣ Create virtual environment
-
-MEDIA_ROOT = BASE_DIR / 'media'
-
-uv run manage.py tailwind setup```bash
-
-# TailwindCSS + DaisyUI
-
-TAILWIND_CLI_PATH = "~/.local/bin/"uv run manage.py tailwind builduv venv
-
-TAILWIND_CLI_VERSION = "latest"
-
-TAILWIND_CLI_AUTOMATIC_DOWNLOAD = True.venv\Scripts\activate
-
+#### Daisy UI with Tailwind CLI Configuration
+```bash
 TAILWIND_CLI_USE_DAISY_UI = True
+```
+#### Middleware
 
-TAILWIND_CLI_SRC_CSS = "static/css/source.css"# 5. Run migrations```
+```python
+MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    
+    'django_htmx.middleware.HtmxMiddleware',  # HTMX support
+    'django_browser_reload.middleware.BrowserReloadMiddleware',  # Live reload
+]
+```
 
-TAILWIND_CLI_DIST_CSS = "static/css/output.css"
+#### Templates
 
-uv run manage.py migrate
+```python
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
+            ],
+            'builtins': ['django_cotton.templatetags.cotton'],
+        },
+    },
+]
+```
 
-# Security
+#### Static & Media Files
 
-SECURE_BROWSER_XSS_FILTER = Trueuv run manage.py createsuperuser---
+```python
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
-SECURE_CONTENT_TYPE_NOSNIFF = True
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+```
 
-X_FRAME_OPTIONS = 'DENY'
 
-HONEYPOT_FIELD_NAME = 'email_confirm'
+#### Additional Settings
 
-# 6. Start development server## 📦 Step 2: Install All Packages at Once
-
-# Development
-
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']uv run manage.py tailwind runserver
-
+```python
+# For browser reload
 INTERNAL_IPS = ["127.0.0.1"]
 
-``````### Install all required packages with uv
+# Anti-spam honeypot
+HONEYPOT_FIELD_NAME = 'email_confirm'
 
+# Jazzmin admin customization
+JAZZMIN_SETTINGS = {
+    "site_title": "My Admin",
+    "site_header": "My Admin",
+}
+```
 
+---
 
----```bash
+## 🗄️ Database Setup (Optional)
 
+### MySQL Configuration
 
+If you prefer MySQL over SQLite, follow these steps:
 
-### Step 3: TailwindCSS ConfigurationVisit: **http://127.0.0.1:8000/** 🎉uv pip install django pillow django-extensions django-cotton django-tailwind-cli honeypot mysqlclient django-htmx django-browser-reload
+#### 1. Create MySQL Database
 
+```sql
+CREATE DATABASE myproject_db;
+CREATE USER 'myproject_user'@'localhost' IDENTIFIED BY 'your_password';
+GRANT ALL PRIVILEGES ON myproject_db.* TO 'myproject_user'@'localhost';
+FLUSH PRIVILEGES;
+```
 
+#### 2. Update Database Settings
 
-Create `static/css/source.css`:```
+Replace the `DATABASES` section in `config/settings.py`:
 
+```python
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'myproject_db',
+        'USER': 'myproject_user',
+        'PASSWORD': 'your_password',  # Use your actual password
+        'HOST': 'localhost',
+        'PORT': '3306',
+    }
+}
+```
 
+---
 
-```css---
+## 🎨 Frontend Setup
 
-/* Import TailwindCSS */
+### Step 6: Create Tailwind Source File
 
-@import "tailwindcss";**Packages installed:**
+in `./django_tailwind_cli/source.css`:
 
+```css
+@import "tailwindcss";
 
-
-/* DaisyUI Plugin */# Detailed Setup Steps- `django` - Web framework
-
+/* DaisyUI plugin with theme configuration */
 @plugin "daisyui" {
-
-    themes: ["light", "dark", "cupcake", "synthwave", "retro", "cyberpunk"];- `pillow` - Image processing
-
-};
-
-## ⚙️ Step 1: Project Setup- `django-extensions` - Useful Django extensions
-
-/* Custom Variables */
-
-@layer base {- `django-cotton` - Component-based templates
-
-  :root {
-
-    --color-bg-primary: 255 255 255;### 1️⃣ Create project folder and initialize environment- `django-tailwind-cli` - TailwindCSS without Node.js (with DaisyUI support)
-
-    --color-bg-secondary: 249 250 251;
-
-    --color-text-primary: 17 24 39;```bash- `honeypot` - Security against spam bots
-
-    --color-text-secondary: 75 85 99;
-
-    --color-primary: 59 130 246;mkdir myproject- `mysqlclient` - MySQL database connector
-
-    --color-secondary: 139 92 246;
-
-  }cd myproject- `django-htmx` - HTMX integration for Django
-
-
-
-  .dark {uv init- `django-browser-reload` - Auto browser reload in development
-
-    --color-bg-primary: 17 24 39;
-
-    --color-bg-secondary: 31 41 55;```
-
-    --color-text-primary: 243 244 246;
-
-    --color-text-secondary: 209 213 219;---
-
-    --color-primary: 96 165 250;
-
-    --color-secondary: 167 139 250;### 2️⃣ Create virtual environment
-
-  }
-
-}```bash## 🚀 Step 3: Create Django Project
-
-
-
-@layer components {uv venv
-
-  .container {
-
-    @apply mx-auto px-4 sm:px-6 lg:px-8;.venv\Scripts\activate### 1️⃣ Create Django project and app
-
-    max-width: 1280px;
-
-  }``````bash
-
+  themes: ["light", "dark", "cupcake", "synthwave", "retro", "cyberpunk"];
 }
 
-```django-admin startproject config .
+/* Custom component styles */
+@layer components {
+  .container {
+    @apply mx-auto px-4;
+  }
+}
+```
 
+### Step 7: Configure URLs
 
-
-------python manage.py startapp core
-
-
-
-### Step 4: URLs Configuration```
-
-
-
-**`config/urls.py`:**## 📦 Step 2: Install All Packages at Once
+#### Main URLs - `config/urls.py`
 
 ```python
-
-from django.contrib import admin### 2️⃣ Create required directories
-
+from django.contrib import admin
 from django.urls import path, include
-
-from django.conf import settings### Install all required packages with uv```bash
-
+from django.conf import settings
 from django.conf.urls.static import static
 
-```bashmkdir templates
-
 urlpatterns = [
-
-    path('admin/', admin.site.urls),uv pip install django pillow django-extensions django-cotton django-tailwind-cli honeypot mysqlclient django-htmx django-browser-reloadmkdir static
-
+    path('admin/', admin.site.urls),
     path('', include('core.urls')),
-
-    path("__reload__/", include("django_browser_reload.urls")),```mkdir media
-
+    path("__reload__/", include("django_browser_reload.urls")),
 ]
 
-mkdir static\css
-
+# Serve static and media files in development
 if settings.DEBUG:
-
-    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)**Packages installed:**mkdir static\js
-
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+```
 
-```- `django` - Web frameworkmkdir static\images
+#### Core App URLs - `core/urls.py`
 
-
-
-**`core/urls.py`:**- `pillow` - Image processing```
+Create this file in your `core` directory:
 
 ```python
-
-from django.urls import path- `django-extensions` - Useful Django extensions
-
+from django.urls import path
 from . import views
-
-- `django-cotton` - Component-based templates---
 
 app_name = 'core'
 
-- `django-tailwind-cli` - TailwindCSS without Node.js (with DaisyUI support)
-
 urlpatterns = [
-
-    path('', views.home, name='home'),- `honeypot` - Security against spam bots## 🗄️ Step 4: MySQL Database Setup
-
-]
-
-```- `mysqlclient` - MySQL database connector
-
-
-
-**`core/views.py`:**- `django-htmx` - HTMX integration for Django### 1️⃣ Install MySQL Server
-
-```python
-
-from django.shortcuts import render- `django-browser-reload` - Auto browser reload in developmentDownload and install MySQL from [https://dev.mysql.com/downloads/installer/](https://dev.mysql.com/downloads/installer/)
-
-
-
-def home(request):
-
-    return render(request, 'core/home.html')
-
-```---### 2️⃣ Create database
-
-
-
----Open MySQL command line:
-
-
-
-### Step 5: Templates## 🚀 Step 3: Create Django Project```sql
-
-
-
-Create directory structure:CREATE DATABASE myproject_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-
-```bash
-
-mkdir templates\core### 1️⃣ Create Django project and appCREATE USER 'myproject_user'@'localhost' IDENTIFIED BY 'your_password';
-
-mkdir templates\includes
-
-``````bashGRANT ALL PRIVILEGES ON myproject_db.* TO 'myproject_user'@'localhost';
-
-
-
-**`templates/base.html`:**django-admin startproject config .FLUSH PRIVILEGES;
-
-```html
-
-{% load static %}python manage.py startapp coreEXIT;
-
-{% load tailwind_cli %}
-
-``````
-
-<!DOCTYPE html>
-
-<html lang="en" data-theme="light">
-
-<head>
-
-    <meta charset="UTF-8">### 2️⃣ Create required directories### 3️⃣ Configure database in `config/settings.py`
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>{% block title %}My Django App{% endblock %} | Your Brand</title>```bash```python
-
-    
-
-    <!-- SEO -->mkdir templatesDATABASES = {
-
-    <meta name="description" content="{% block description %}Django app with TailwindCSS and DaisyUI{% endblock %}">
-
-    <meta name="robots" content="index, follow">mkdir static    'default': {
-
-    
-
-    <!-- TailwindCSS -->mkdir media        'ENGINE': 'django.db.backends.mysql',
-
-    {% tailwind_css %}
-
-    mkdir static\css        'NAME': 'myproject_db',
-
-    <!-- Alpine.js & HTMX -->
-
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>mkdir static\js        'USER': 'myproject_user',
-
-    <script src="https://unpkg.com/htmx.org@2.0.3"></script>
-
-    mkdir static\images        'PASSWORD': 'your_password',
-
-    {% block extra_css %}{% endblock %}
-
-</head>```        'HOST': 'localhost',
-
-
-
-<body class="bg-base-100" x-data="{ darkMode: false }" :data-theme="darkMode ? 'dark' : 'light'">        'PORT': '3306',
-
-    <!-- Navbar -->
-
-    {% include 'includes/navbar.html' %}---        'OPTIONS': {
-
-    
-
-    <!-- Main Content -->            'charset': 'utf8mb4',
-
-    <main class="min-h-screen">
-
-        <!-- Messages -->## 🗄️ Step 4: MySQL Database Setup            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
-
-        {% if messages %}
-
-        <div class="container mx-auto px-4 py-4">        }
-
-            {% for message in messages %}
-
-            <div class="alert alert-{{ message.tags|default:'info' }} mb-2">### 1️⃣ Install MySQL Server    }
-
-                {{ message }}
-
-            </div>Download and install MySQL from [https://dev.mysql.com/downloads/installer/](https://dev.mysql.com/downloads/installer/)}
-
-            {% endfor %}
-
-        </div>```
-
-        {% endif %}
-
-        ### 2️⃣ Create database
-
-        {% block content %}{% endblock %}
-
-    </main>Open MySQL command line:---
-
-    
-
-    <!-- Footer -->```sql
-
-    {% include 'includes/footer.html' %}
-
-    CREATE DATABASE myproject_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;## ⚙️ Step 5: Django Settings Configuration
-
-    {% block extra_js %}{% endblock %}
-
-</body>CREATE USER 'myproject_user'@'localhost' IDENTIFIED BY 'your_password';
-
-</html>
-
-```GRANT ALL PRIVILEGES ON myproject_db.* TO 'myproject_user'@'localhost';### Update `config/settings.py`
-
-
-
-**`templates/includes/navbar.html`:**FLUSH PRIVILEGES;
-
-```html
-
-<div class="navbar bg-base-200" x-data="{ mobileMenu: false }">EXIT;#### 1️⃣ Add apps to INSTALLED_APPS
-
-    <div class="container mx-auto">
-
-        <div class="flex-1">``````python
-
-            <a href="/" class="btn btn-ghost text-xl">YourLogo</a>
-
-        </div>INSTALLED_APPS = [
-
-        
-
-        <div class="flex-none hidden md:flex">### 3️⃣ Configure database in `config/settings.py`    'django.contrib.admin',
-
-            <ul class="menu menu-horizontal px-1">
-
-                <li><a href="/">Home</a></li>```python    'django.contrib.auth',
-
-                <li><a href="#">About</a></li>
-
-                <li><a href="#">Services</a></li>DATABASES = {    'django.contrib.contenttypes',
-
-                <li><a href="#">Contact</a></li>
-
-            </ul>    'default': {    'django.contrib.sessions',
-
-        </div>
-
-                'ENGINE': 'django.db.backends.mysql',    'django.contrib.messages',
-
-        <!-- Dark Mode Toggle -->
-
-        <button @click="darkMode = !darkMode" class="btn btn-ghost btn-circle">        'NAME': 'myproject_db',    'django.contrib.staticfiles',
-
-            <svg x-show="!darkMode" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-
-                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>        'USER': 'myproject_user',    
-
-            </svg>
-
-            <svg x-show="darkMode" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">        'PASSWORD': 'your_password',    # Third party apps
-
-                <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0z"></path>
-
-            </svg>        'HOST': 'localhost',    'django_extensions',
-
-        </button>
-
-                'PORT': '3306',    'django_cotton',
-
-        <!-- Mobile Menu -->
-
-        <button @click="mobileMenu = !mobileMenu" class="btn btn-ghost md:hidden">        'OPTIONS': {    'django_tailwind_cli',
-
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>            'charset': 'utf8mb4',    'honeypot',
-
-            </svg>
-
-        </button>            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",    'django_htmx',
-
-    </div>
-
-            }    'django_browser_reload',
-
-    <!-- Mobile Dropdown -->
-
-    <div x-show="mobileMenu" class="md:hidden">    }    
-
-        <ul class="menu menu-sm">
-
-            <li><a>Home</a></li>}    # Local apps
-
-            <li><a>About</a></li>
-
-            <li><a>Services</a></li>```    'core',
-
-            <li><a>Contact</a></li>
-
-        </ul>]
-
-    </div>
-
-</div>---```
-
-```
-
-
-
-**`templates/includes/footer.html`:**
-
-```html## ⚙️ Step 5: Django Settings Configuration#### 2️⃣ Add middleware for security
-
-<footer class="footer footer-center p-10 bg-base-200 text-base-content">
-
-    <aside>```python
-
-        <p class="font-bold text-xl">Your Brand Name</p>
-
-        <p>Quality web solutions since 2025</p>### Update `config/settings.py`MIDDLEWARE = [
-
-    </aside>
-
-    <nav>    'django.middleware.security.SecurityMiddleware',
-
-        <div class="grid grid-flow-col gap-4">
-
-            <a class="link link-hover">About</a>#### 1️⃣ Add apps to INSTALLED_APPS    'django.contrib.sessions.middleware.SessionMiddleware',
-
-            <a class="link link-hover">Contact</a>
-
-            <a class="link link-hover">Privacy</a>```python    'django.middleware.common.CommonMiddleware',
-
-            <a class="link link-hover">Terms</a>
-
-        </div>INSTALLED_APPS = [    'django.middleware.csrf.CsrfViewMiddleware',
-
-    </nav>
-
-    <aside>    'django.contrib.admin',    'django.contrib.auth.middleware.AuthenticationMiddleware',
-
-        <p>© 2025 Your Brand. All rights reserved.</p>
-
-    </aside>    'django.contrib.auth',    'django.contrib.messages.middleware.MessageMiddleware',
-
-</footer>
-
-```    'django.contrib.contenttypes',    'django.middleware.clickjacking.XFrameOptionsMiddleware',
-
-
-
-**`templates/core/home.html`:**    'django.contrib.sessions',    'django_htmx.middleware.HtmxMiddleware',  # HTMX support
-
-```html
-
-{% extends 'base.html' %}    'django.contrib.messages',    'django_browser_reload.middleware.BrowserReloadMiddleware',  # Auto-reload in development
-
-
-
-{% block title %}Home{% endblock %}    'django.contrib.staticfiles',]
-
-
-
-{% block content %}    ```
-
-<div class="hero min-h-screen bg-base-200">
-
-    <div class="hero-content text-center">    # Third party apps
-
-        <div class="max-w-md">
-
-            <h1 class="text-5xl font-bold text-primary">Welcome to Django!</h1>    'django_extensions',#### 3️⃣ Configure templates
-
-            <p class="py-6 text-lg">
-
-                Built with <span class="badge badge-primary">Django</span>     'django_cotton',```python
-
-                <span class="badge badge-secondary">TailwindCSS</span> 
-
-                <span class="badge badge-accent">DaisyUI</span>    'django_tailwind_cli',TEMPLATES = [
-
-            </p>
-
-            <div class="flex gap-4 justify-center">    'honeypot',    {
-
-                <button class="btn btn-primary">Get Started</button>
-
-                <button class="btn btn-outline">Learn More</button>    'django_htmx',        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-
-            </div>
-
-        </div>    'django_browser_reload',        'DIRS': [BASE_DIR / 'templates'],
-
-    </div>
-
-</div>            'APP_DIRS': True,
-
-
-
-<!-- Features Section -->    # Local apps        'OPTIONS': {
-
-<div class="container mx-auto py-16 px-4">
-
-    <h2 class="text-4xl font-bold text-center mb-12">Features</h2>    'core',            'context_processors': [
-
-    
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">]                'django.template.context_processors.debug',
-
-        <div class="card bg-base-100 shadow-xl">
-
-            <div class="card-body items-center text-center">```                'django.template.context_processors.request',
-
-                <div class="text-4xl mb-4">⚡</div>
-
-                <h3 class="card-title">Fast Setup</h3>                'django.contrib.auth.context_processors.auth',
-
-                <p>No Node.js or npm required</p>
-
-            </div>#### 2️⃣ Add middleware for security                'django.contrib.messages.context_processors.messages',
-
-        </div>
-
-        ```python                'django.template.context_processors.media',
-
-        <div class="card bg-base-100 shadow-xl">
-
-            <div class="card-body items-center text-center">MIDDLEWARE = [            ],
-
-                <div class="text-4xl mb-4">🎨</div>
-
-                <h3 class="card-title">Beautiful UI</h3>    'django.middleware.security.SecurityMiddleware',            'builtins': [
-
-                <p>TailwindCSS + DaisyUI components</p>
-
-            </div>    'django.contrib.sessions.middleware.SessionMiddleware',                'django_cotton.templatetags.cotton',
-
-        </div>
-
-            'django.middleware.common.CommonMiddleware',            ],
-
-        <div class="card bg-base-100 shadow-xl">
-
-            <div class="card-body items-center text-center">    'django.middleware.csrf.CsrfViewMiddleware',        },
-
-                <div class="text-4xl mb-4">🔒</div>
-
-                <h3 class="card-title">Secure</h3>    'django.contrib.auth.middleware.AuthenticationMiddleware',    },
-
-                <p>Built-in security features</p>
-
-            </div>    'django.contrib.messages.middleware.MessageMiddleware',]
-
-        </div>
-
-    </div>    'django.middleware.clickjacking.XFrameOptionsMiddleware',```
-
-</div>
-
-{% endblock %}    'django_htmx.middleware.HtmxMiddleware',  # HTMX support
-
-```
-
-    'django_browser_reload.middleware.BrowserReloadMiddleware',  # Auto-reload in development#### 4️⃣ Configure static and media files
-
----
-
-]```python
-
-## 🎨 DaisyUI Components
-
-```# Static files (CSS, JavaScript, Images)
-
-**Buttons:**
-
-```htmlSTATIC_URL = '/static/'
-
-<button class="btn btn-primary">Primary</button>
-
-<button class="btn btn-secondary">Secondary</button>#### 3️⃣ Configure templatesSTATIC_ROOT = BASE_DIR / 'staticfiles'
-
-<button class="btn btn-accent">Accent</button>
-
-``````pythonSTATICFILES_DIRS = [
-
-
-
-**Cards:**TEMPLATES = [    BASE_DIR / 'static',
-
-```html
-
-<div class="card bg-base-100 shadow-xl">    {]
-
-    <div class="card-body">
-
-        <h2 class="card-title">Card Title</h2>        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-
-        <p>Card content</p>
-
-        <div class="card-actions">        'DIRS': [BASE_DIR / 'templates'],# Media files (User uploads)
-
-            <button class="btn btn-primary">Action</button>
-
-        </div>        'APP_DIRS': True,MEDIA_URL = '/media/'
-
-    </div>
-
-</div>        'OPTIONS': {MEDIA_ROOT = BASE_DIR / 'media'
-
-```
-
-            'context_processors': [```
-
-**Alerts:**
-
-```html                'django.template.context_processors.debug',
-
-<div class="alert alert-success">Success message!</div>
-
-<div class="alert alert-warning">Warning message!</div>                'django.template.context_processors.request',#### 5️⃣ Add security settings
-
-<div class="alert alert-error">Error message!</div>
-
-```                'django.contrib.auth.context_processors.auth',```python
-
-
-
-More components: [daisyui.com/components](https://daisyui.com/components/)                'django.contrib.messages.context_processors.messages',# Security Settings
-
-
-
----                'django.template.context_processors.media',SECURE_BROWSER_XSS_FILTER = True
-
-
-
-## ⚡ Alpine.js Examples            ],SECURE_CONTENT_TYPE_NOSNIFF = True
-
-
-
-**Toggle:**            'builtins': [X_FRAME_OPTIONS = 'DENY'
-
-```html
-
-<div x-data="{ open: false }">                'django_cotton.templatetags.cotton',CSRF_COOKIE_SECURE = False  # Set True in production with HTTPS
-
-    <button @click="open = !open" class="btn btn-primary">Toggle</button>
-
-    <div x-show="open" class="alert mt-4">Content!</div>            ],SESSION_COOKIE_SECURE = False  # Set True in production with HTTPS
-
-</div>
-
-```        },SECURE_SSL_REDIRECT = False  # Set True in production with HTTPS
-
-
-
-**Counter:**    },
-
-```html
-
-<div x-data="{ count: 0 }">]# Honeypot settings
-
-    <button @click="count++" class="btn">+</button>
-
-    <span x-text="count"></span>```HONEYPOT_FIELD_NAME = 'email_confirm'
-
-    <button @click="count--" class="btn">-</button>
-
-</div>```
-
-```
-
-#### 4️⃣ Configure static and media files
-
----
-
-```python#### 6️⃣ Configure allowed hosts
-
-## 🔥 HTMX Examples
-
-# Static files (CSS, JavaScript, Images)```python
-
-**Load Content:**
-
-```htmlSTATIC_URL = '/static/'ALLOWED_HOSTS = ['localhost', '127.0.0.1']
-
-<button hx-get="/load-data/" hx-target="#result" class="btn btn-primary">
-
-    Load DataSTATIC_ROOT = BASE_DIR / 'staticfiles'
-
-</button>
-
-<div id="result"></div>STATICFILES_DIRS = [# Browser reload configuration (for development only)
-
-```
-
-    BASE_DIR / 'static',INTERNAL_IPS = [
-
-**Django View:**
-
-```python]    "127.0.0.1",
-
-def load_data(request):
-
-    if request.htmx:]
-
-        return render(request, 'partials/data.html')
-
-    return render(request, 'full_page.html')# Media files (User uploads)```
-
-```
-
-MEDIA_URL = '/media/'
-
----
-
-MEDIA_ROOT = BASE_DIR / 'media'---
-
-## 🛠️ Troubleshooting
-
-```
-
-### MySQL Connection Error
-
-- Ensure MySQL is running## 🎨 Step 6: TailwindCSS + DaisyUI Setup
-
-- Check credentials in `settings.py`
-
-- Try: `uv pip install mysqlclient --force-reinstall`#### 5️⃣ Add security settings
-
-
-
-### TailwindCSS Not Working```python### 1️⃣ Add TailwindCSS CLI settings to `config/settings.py`
-
-- Run: `uv run manage.py tailwind build`
-
-- Check `source.css` exists in `static/css/`# Security Settings```python
-
-- Verify `TAILWIND_CLI_USE_DAISY_UI = True` in settings
-
-SECURE_BROWSER_XSS_FILTER = True# TailwindCSS CLI Configuration
-
-### Static Files Not Loading
-
-- Run: `uv run manage.py collectstatic`SECURE_CONTENT_TYPE_NOSNIFF = TrueTAILWIND_CLI_PATH = "~/.local/bin/"  # Will auto-download
-
-- Check `{% load static %}` in template
-
-- Ensure `DEBUG = True` for developmentX_FRAME_OPTIONS = 'DENY'TAILWIND_CLI_VERSION = "latest"
-
-
-
----CSRF_COOKIE_SECURE = False  # Set True in production with HTTPSTAILWIND_CLI_AUTOMATIC_DOWNLOAD = True
-
-
-
-## 📚 ResourcesSESSION_COOKIE_SECURE = False  # Set True in production with HTTPS
-
-
-
-- **Django:** [docs.djangoproject.com](https://docs.djangoproject.com/)SECURE_SSL_REDIRECT = False  # Set True in production with HTTPS# Enable DaisyUI
-
-- **TailwindCSS:** [tailwindcss.com](https://tailwindcss.com/)
-
-- **DaisyUI:** [daisyui.com](https://daisyui.com/)TAILWIND_CLI_USE_DAISY_UI = True
-
-- **Alpine.js:** [alpinejs.dev](https://alpinejs.dev/)
-
-- **HTMX:** [htmx.org](https://htmx.org/)# Honeypot settings
-
-
-
----HONEYPOT_FIELD_NAME = 'email_confirm'# TailwindCSS source and destination
-
-
-
-## 🎉 You're Ready!```TAILWIND_CLI_SRC_CSS = "static/css/source.css"
-
-
-
-Start building amazing Django applications! 🚀TAILWIND_CLI_DIST_CSS = "static/css/output.css"
-
-
-
-**Made with ❤️ for the Django community**#### 6️⃣ Configure allowed hosts and browser reload```
-
-
-```python
-
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']### 2️⃣ Initialize TailwindCSS
-
-```bash
-
-# Browser reload configuration (for development only)uv run manage.py tailwind setup
-
-INTERNAL_IPS = [```
-
-    "127.0.0.1",
-
-]This command will:
-
-```- Download the TailwindCSS standalone CLI
-
-- Set up the necessary configuration
-
----- Prepare DaisyUI integration
-
-
-
-## 🎨 Step 6: TailwindCSS + DaisyUI Setup### 3️⃣ Create `static/css/source.css`
-
-```bash
-
-### 1️⃣ Add TailwindCSS CLI settings to `config/settings.py`New-Item -Path "static/css/source.css" -ItemType File -Force
-
-```python```
-
-# TailwindCSS CLI Configuration
-
-TAILWIND_CLI_PATH = "~/.local/bin/"  # Will auto-downloadAdd this content to `static/css/source.css`:
-
-TAILWIND_CLI_VERSION = "latest"```css
-
-TAILWIND_CLI_AUTOMATIC_DOWNLOAD = True/* Import TailwindCSS */
-
-@import "tailwindcss";
-
-# Enable DaisyUI
-
-TAILWIND_CLI_USE_DAISY_UI = True/* Enable DaisyUI plugin with themes */
-
-@plugin "daisyui" {
-
-# TailwindCSS source and destination    /* Configure DaisyUI themes */
-
-TAILWIND_CLI_SRC_CSS = "static/css/source.css"    themes: ["light", "dark", "cupcake", "synthwave", "retro", "cyberpunk", "valentine", "halloween", "garden", "forest", "aqua", "lofi", "pastel", "fantasy", "wireframe", "black", "luxury", "dracula", "cmyk", "autumn", "business", "acid", "lemonade", "night", "coffee", "winter"];
-
-TAILWIND_CLI_DIST_CSS = "static/css/output.css"};
-
-```
-
-/* Custom CSS Variables for Dark/Light Mode */
-
-### 2️⃣ Initialize TailwindCSS@layer base {
-
-```bash  :root {
-
-uv run manage.py tailwind setup    /* Light Mode Colors */
-
-```    --color-bg-primary: 255 255 255;
-
-    --color-bg-secondary: 249 250 251;
-
-This command will:    --color-bg-tertiary: 243 244 246;
-
-- Download the TailwindCSS standalone CLI    
-
-- Set up the necessary configuration    --color-text-primary: 17 24 39;
-
-- Prepare DaisyUI integration    --color-text-secondary: 75 85 99;
-
-    --color-text-tertiary: 107 114 128;
-
-### 3️⃣ Create `static/css/source.css`    
-
-    --color-title: 31 41 55;
-
-Add this content to `static/css/source.css`:    --color-subtitle: 55 65 81;
-
-```css    --color-description: 107 114 128;
-
-/* Import TailwindCSS */    
-
-@import "tailwindcss";    --color-primary: 59 130 246;
-
-    --color-primary-hover: 37 99 235;
-
-/* Enable DaisyUI plugin with themes */    --color-secondary: 139 92 246;
-
-@plugin "daisyui" {    --color-secondary-hover: 124 58 237;
-
-    /* Configure DaisyUI themes */    
-
-    themes: ["light", "dark", "cupcake", "synthwave", "retro", "cyberpunk", "valentine", "halloween", "garden", "forest", "aqua", "lofi", "pastel", "fantasy", "wireframe", "black", "luxury", "dracula", "cmyk", "autumn", "business", "acid", "lemonade", "night", "coffee", "winter"];    --color-accent: 236 72 153;
-
-};    --color-success: 34 197 94;
-
-    --color-warning: 251 146 60;
-
-/* Custom CSS Variables for Dark/Light Mode */    --color-error: 239 68 68;
-
-@layer base {    
-
-  :root {    --color-logo: 59 130 246;
-
-    /* Light Mode Colors */    --color-border: 229 231 235;
-
-    --color-bg-primary: 255 255 255;  }
-
-    --color-bg-secondary: 249 250 251;
-
-    --color-bg-tertiary: 243 244 246;  .dark {
-
-        /* Dark Mode Colors */
-
-    --color-text-primary: 17 24 39;    --color-bg-primary: 17 24 39;
-
-    --color-text-secondary: 75 85 99;    --color-bg-secondary: 31 41 55;
-
-    --color-text-tertiary: 107 114 128;    --color-bg-tertiary: 55 65 81;
-
-        
-
-    --color-title: 31 41 55;    --color-text-primary: 243 244 246;
-
-    --color-subtitle: 55 65 81;    --color-text-secondary: 209 213 219;
-
-    --color-description: 107 114 128;    --color-text-tertiary: 156 163 175;
-
-        
-
-    --color-primary: 59 130 246;    --color-title: 249 250 251;
-
-    --color-primary-hover: 37 99 235;    --color-subtitle: 229 231 235;
-
-    --color-secondary: 139 92 246;    --color-description: 156 163 175;
-
-    --color-secondary-hover: 124 58 237;    
-
-        --color-primary: 96 165 250;
-
-    --color-accent: 236 72 153;    --color-primary-hover: 59 130 246;
-
-    --color-success: 34 197 94;    --color-secondary: 167 139 250;
-
-    --color-warning: 251 146 60;    --color-secondary-hover: 139 92 246;
-
-    --color-error: 239 68 68;    
-
-        --color-accent: 244 114 182;
-
-    --color-logo: 59 130 246;    --color-success: 74 222 128;
-
-    --color-border: 229 231 235;    --color-warning: 251 191 36;
-
-  }    --color-error: 248 113 113;
-
-    
-
-  .dark {    --color-logo: 96 165 250;
-
-    /* Dark Mode Colors */    --color-border: 75 85 99;
-
-    --color-bg-primary: 17 24 39;  }
-
-    --color-bg-secondary: 31 41 55;}
-
-    --color-bg-tertiary: 55 65 81;
-
-    /* Custom Utility Classes */
-
-    --color-text-primary: 243 244 246;@layer components {
-
-    --color-text-secondary: 209 213 219;  /* Background Colors */
-
-    --color-text-tertiary: 156 163 175;  .bg-primary {
-
-        background-color: rgb(var(--color-bg-primary));
-
-    --color-title: 249 250 251;  }
-
-    --color-subtitle: 229 231 235;  
-
-    --color-description: 156 163 175;  .bg-secondary {
-
-        background-color: rgb(var(--color-bg-secondary));
-
-    --color-primary: 96 165 250;  }
-
-    --color-primary-hover: 59 130 246;  
-
-    --color-secondary: 167 139 250;  .bg-tertiary {
-
-    --color-secondary-hover: 139 92 246;    background-color: rgb(var(--color-bg-tertiary));
-
-      }
-
-    --color-accent: 244 114 182;
-
-    --color-success: 74 222 128;  /* Text Colors */
-
-    --color-warning: 251 191 36;  .text-primary {
-
-    --color-error: 248 113 113;    color: rgb(var(--color-text-primary));
-
-      }
-
-    --color-logo: 96 165 250;  
-
-    --color-border: 75 85 99;  .text-secondary {
-
-  }    color: rgb(var(--color-text-secondary));
-
-}  }
-
-  
-
-/* Custom Utility Classes */  .text-tertiary {
-
-@layer components {    color: rgb(var(--color-text-tertiary));
-
-  /* Background Colors */  }
-
-  .bg-primary {  
-
-    background-color: rgb(var(--color-bg-primary));  .text-title {
-
-  }    color: rgb(var(--color-title));
-
-    }
-
-  .bg-secondary {  
-
-    background-color: rgb(var(--color-bg-secondary));  .text-subtitle {
-
-  }    color: rgb(var(--color-subtitle));
-
-    }
-
-  .bg-tertiary {  
-
-    background-color: rgb(var(--color-bg-tertiary));  .text-description {
-
-  }    color: rgb(var(--color-description));
-
-  }
-
-  /* Text Colors */
-
-  .text-primary {  /* Brand Colors */
-
-    color: rgb(var(--color-text-primary));  .btn-primary {
-
-  }    background-color: rgb(var(--color-primary));
-
-      color: white;
-
-  .text-secondary {  }
-
-    color: rgb(var(--color-text-secondary));  
-
-  }  .btn-primary:hover {
-
-      background-color: rgb(var(--color-primary-hover));
-
-  .text-tertiary {  }
-
-    color: rgb(var(--color-text-tertiary));  
-
-  }  .btn-secondary {
-
-      background-color: rgb(var(--color-secondary));
-
-  .text-title {    color: white;
-
-    color: rgb(var(--color-title));  }
-
-  }  
-
-    .btn-secondary:hover {
-
-  .text-subtitle {    background-color: rgb(var(--color-secondary-hover));
-
-    color: rgb(var(--color-subtitle));  }
-
-  }
-
-    /* Responsive Container */
-
-  .text-description {  .container {
-
-    color: rgb(var(--color-description));    @apply mx-auto px-4 sm:px-6 lg:px-8;
-
-  }    max-width: 1280px;
-
-  }
-
-  /* Brand Colors */  
-
-  .btn-primary {  .container-sm {
-
-    background-color: rgb(var(--color-primary));    @apply mx-auto px-4 sm:px-6 lg:px-8;
-
-    color: white;    max-width: 640px;
-
-  }  }
-
-    
-
-  .btn-primary:hover {  .container-md {
-
-    background-color: rgb(var(--color-primary-hover));    @apply mx-auto px-4 sm:px-6 lg:px-8;
-
-  }    max-width: 768px;
-
-    }
-
-  .btn-secondary {  
-
-    background-color: rgb(var(--color-secondary));  .container-lg {
-
-    color: white;    @apply mx-auto px-4 sm:px-6 lg:px-8;
-
-  }    max-width: 1024px;
-
-    }
-
-  .btn-secondary:hover {  
-
-    background-color: rgb(var(--color-secondary-hover));  .container-xl {
-
-  }    @apply mx-auto px-4 sm:px-6 lg:px-8;
-
-    max-width: 1280px;
-
-  /* Responsive Container */  }
-
-  .container {  
-
-    @apply mx-auto px-4 sm:px-6 lg:px-8;  .container-2xl {
-
-    max-width: 1280px;    @apply mx-auto px-4 sm:px-6 lg:px-8;
-
-  }    max-width: 1536px;
-
-    }
-
-  .container-sm {
-
-    @apply mx-auto px-4 sm:px-6 lg:px-8;  /* Card Component */
-
-    max-width: 640px;  .card {
-
-  }    @apply bg-secondary rounded-lg shadow-md p-6;
-
-    }
-
-  .container-md {  
-
-    @apply mx-auto px-4 sm:px-6 lg:px-8;  .card-title {
-
-    max-width: 768px;    @apply text-title text-2xl font-bold mb-4;
-
-  }  }
-
-    
-
-  .container-lg {  .card-body {
-
-    @apply mx-auto px-4 sm:px-6 lg:px-8;    @apply text-primary;
-
-    max-width: 1024px;  }
-
-  }
-
-    /* Border Utilities */
-
-  .container-xl {  .border-custom {
-
-    @apply mx-auto px-4 sm:px-6 lg:px-8;    border-color: rgb(var(--color-border));
-
-    max-width: 1280px;  }
-
-  }}
-
-  
-
-  .container-2xl {/* Custom Animations */
-
-    @apply mx-auto px-4 sm:px-6 lg:px-8;@layer utilities {
-
-    max-width: 1536px;  .animate-fade-in {
-
-  }    animation: fadeIn 0.5s ease-in;
-
-  }
-
-  /* Card Component */  
-
-  .card {  @keyframes fadeIn {
-
-    @apply bg-secondary rounded-lg shadow-md p-6;    from {
-
-  }      opacity: 0;
-
-      }
-
-  .card-title {    to {
-
-    @apply text-title text-2xl font-bold mb-4;      opacity: 1;
-
-  }    }
-
-    }
-
-  .card-body {  
-
-    @apply text-primary;  .transition-theme {
-
-  }    transition: background-color 0.3s ease, color 0.3s ease;
-
-  }
-
-  /* Border Utilities */}
-
-  .border-custom {```
-
-    border-color: rgb(var(--color-border));
-
-  }### 4️⃣ Build TailwindCSS
-
-}```bash
-
-uv run manage.py tailwind build
-
-/* Custom Animations */```
-
-@layer utilities {
-
-  .animate-fade-in {For development with auto-rebuild:
-
-    animation: fadeIn 0.5s ease-in;```bash
-
-  }uv run manage.py tailwind watch
-
-  ```
-
-  @keyframes fadeIn {
-
-    from {Or run the development server with TailwindCSS auto-compilation:
-
-      opacity: 0;```bash
-
-    }uv run manage.py tailwind runserver
-
-    to {```
-
-      opacity: 1;
-
-    }This command starts both the Django dev server and TailwindCSS watch mode together!
-
-  }
-
-  ---
-
-  .transition-theme {
-
-    transition: background-color 0.3s ease, color 0.3s ease;## 🚀 Step 7: Alpine.js & HTMX Setup
-
-  }
-
-}### 1️⃣ What are Alpine.js & HTMX?
-
-```
-
-**Alpine.js** - Lightweight JavaScript framework for adding interactivity  
-
-### 4️⃣ Build TailwindCSS**HTMX** - Access modern browser features directly from HTML
-
-```bash
-
-uv run manage.py tailwind buildBoth work perfectly without build steps or npm!
-
-```
-
-### 2️⃣ Add Alpine.js & HTMX to your base template
-
-For development with auto-rebuild:
-
-```bashAlpine.js and HTMX are loaded via CDN (no installation needed).
-
-uv run manage.py tailwind watch
-
-```We'll add them to `base.html` in the next step.
-
-
-
-Or run the development server with TailwindCSS auto-compilation:### 3️⃣ Using HTMX in Django
-
-```bash
-
-uv run manage.py tailwind runserverHTMX is already configured via `django-htmx` package and middleware.
-
-```
-
-**Example HTMX usage:**
-
-This command starts both the Django dev server and TailwindCSS watch mode together!```html
-
-<!-- Load content without page reload -->
-
----<button hx-get="/api/data/" hx-target="#result">
-
-    Load Data
-
-## 🚀 Step 7: Alpine.js & HTMX Setup</button>
-
-<div id="result"></div>
-
-### 1️⃣ What are Alpine.js & HTMX?```
-
-
-
-**Alpine.js** - Lightweight JavaScript framework for adding interactivity (15KB)  **Django view for HTMX:**
-
-**HTMX** - Access modern browser features directly from HTML (14KB)```python
-
-def htmx_data(request):
-
-Both work perfectly without build steps or npm!    if request.htmx:  # Check if request is from HTMX
-
-        return render(request, 'partials/data.html')
-
-### 2️⃣ Configuration    return render(request, 'full_page.html')
-
-```
-
-Alpine.js and HTMX are loaded via CDN in the base template (no installation needed).
-
----
-
-The `django-htmx` package and middleware provide server-side support for HTMX requests.
-
-## 📄 Step 8: Create Base Template with SEO
-
-### 3️⃣ Using HTMX in Django
-
-### Create `templates/base.html`
-
-HTMX is already configured via `django-htmx` package and middleware.```bash
-
-New-Item -Path "templates/base.html" -ItemType File -Force
-
-**Example HTMX usage:**```
-
-```html
-
-<!-- Load content without page reload -->Add this content to `templates/base.html`:
-
-<button hx-get="/api/data/" hx-target="#result" class="btn btn-primary">```html
-
-    Load Data{% load static %}
-
-</button>{% load tailwind_cli %}
-
-<div id="result"></div>
-
-```<!DOCTYPE html>
-
-<html lang="en" data-theme="light" class="scroll-smooth">
-
-**Django view for HTMX:**<head>
-
-```python    <!-- Essential Meta Tags -->
-
-def htmx_data(request):    <meta charset="UTF-8">
-
-    if request.htmx:  # Check if request is from HTMX    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-        return render(request, 'partials/data.html')    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-    return render(request, 'full_page.html')    
-
-```    <!-- SEO Meta Tags -->
-
-    <title>{% block title %}My Django Project{% endblock %} | Your Brand Name</title>
-
----    <meta name="description" content="{% block description %}Your comprehensive Django application with modern design and functionality.{% endblock %}">
-
-    <meta name="keywords" content="{% block keywords %}django, web development, tailwindcss, daisyui, htmx, alpine.js{% endblock %}">
-
-## 📄 Step 8: Create Base Template with SEO    <meta name="author" content="Your Name or Company">
-
-    <meta name="robots" content="index, follow">
-
-### Create `templates/base.html`    <meta name="language" content="English">
-
-    <meta name="revisit-after" content="7 days">
-
-Add this content to `templates/base.html`:    
-
-```html    <!-- Canonical URL -->
-
-{% load static %}    <link rel="canonical" href="{% block canonical %}{{ request.build_absolute_uri }}{% endblock %}">
-
-{% load tailwind_cli %}    
-
-    <!-- Open Graph Meta Tags (Facebook, LinkedIn) -->
-
-<!DOCTYPE html>    <meta property="og:title" content="{% block og_title %}{% block title %}My Django Project{% endblock %}{% endblock %}">
-
-<html lang="en" data-theme="light" class="scroll-smooth">    <meta property="og:description" content="{% block og_description %}{% block description %}Your comprehensive Django application with modern design and functionality.{% endblock %}{% endblock %}">
-
-<head>    <meta property="og:type" content="{% block og_type %}website{% endblock %}">
-
-    <!-- Essential Meta Tags -->    <meta property="og:url" content="{% block og_url %}{{ request.build_absolute_uri }}{% endblock %}">
-
-    <meta charset="UTF-8">    <meta property="og:image" content="{% block og_image %}{% static 'images/og-image.jpg' %}{% endblock %}">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <meta property="og:image:alt" content="{% block og_image_alt %}Your Brand Logo{% endblock %}">
-
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">    <meta property="og:site_name" content="Your Brand Name">
-
-        <meta property="og:locale" content="en_US">
-
-    <!-- SEO Meta Tags -->    
-
-    <title>{% block title %}My Django Project{% endblock %} | Your Brand Name</title>    <!-- Twitter Card Meta Tags -->
-
-    <meta name="description" content="{% block description %}Your comprehensive Django application with modern design and functionality.{% endblock %}">    <meta name="twitter:card" content="summary_large_image">
-
-    <meta name="keywords" content="{% block keywords %}django, web development, tailwindcss, daisyui, htmx, alpine.js{% endblock %}">    <meta name="twitter:site" content="@yourtwitterhandle">
-
-    <meta name="author" content="Your Name or Company">    <meta name="twitter:creator" content="@yourtwitterhandle">
-
-    <meta name="robots" content="index, follow">    <meta name="twitter:title" content="{% block twitter_title %}{% block title %}My Django Project{% endblock %}{% endblock %}">
-
-    <meta name="language" content="English">    <meta name="twitter:description" content="{% block twitter_description %}{% block description %}Your comprehensive Django application with modern design and functionality.{% endblock %}{% endblock %}">
-
-    <meta name="revisit-after" content="7 days">    <meta name="twitter:image" content="{% block twitter_image %}{% static 'images/twitter-card.jpg' %}{% endblock %}">
-
-        
-
-    <!-- Canonical URL -->    <!-- Favicon -->
-
-    <link rel="canonical" href="{% block canonical %}{{ request.build_absolute_uri }}{% endblock %}">    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon-32x32.png' %}">
-
-        <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon-16x16.png' %}">
-
-    <!-- Open Graph Meta Tags (Facebook, LinkedIn) -->    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/apple-touch-icon.png' %}">
-
-    <meta property="og:title" content="{% block og_title %}{% block title %}My Django Project{% endblock %}{% endblock %}">    <link rel="manifest" href="{% static 'site.webmanifest' %}">
-
-    <meta property="og:description" content="{% block og_description %}{% block description %}Your comprehensive Django application with modern design and functionality.{% endblock %}{% endblock %}">    
-
-    <meta property="og:type" content="{% block og_type %}website{% endblock %}">    <!-- Theme Color -->
-
-    <meta property="og:url" content="{% block og_url %}{{ request.build_absolute_uri }}{% endblock %}">    <meta name="theme-color" content="#3b82f6">
-
-    <meta property="og:image" content="{% block og_image %}{% static 'images/og-image.jpg' %}{% endblock %}">    <meta name="msapplication-TileColor" content="#3b82f6">
-
-    <meta property="og:image:alt" content="{% block og_image_alt %}Your Brand Logo{% endblock %}">    
-
-    <meta property="og:site_name" content="Your Brand Name">    <!-- TailwindCSS Output (Auto-generated by django-tailwind-cli) -->
-
-    <meta property="og:locale" content="en_US">    {% tailwind_css %}
-
-        
-
-    <!-- Twitter Card Meta Tags -->    <!-- Alpine.js - Lightweight JavaScript Framework -->
-
-    <meta name="twitter:card" content="summary_large_image">    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-
-    <meta name="twitter:site" content="@yourtwitterhandle">    
-
-    <meta name="twitter:creator" content="@yourtwitterhandle">    <!-- HTMX - Modern Browser Features from HTML -->
-
-    <meta name="twitter:title" content="{% block twitter_title %}{% block title %}My Django Project{% endblock %}{% endblock %}">    <script src="https://unpkg.com/htmx.org@2.0.3"></script>
-
-    <meta name="twitter:description" content="{% block twitter_description %}{% block description %}Your comprehensive Django application with modern design and functionality.{% endblock %}{% endblock %}">    
-
-    <meta name="twitter:image" content="{% block twitter_image %}{% static 'images/twitter-card.jpg' %}{% endblock %}">    <!-- Additional Stylesheets -->
-
-        {% block extra_css %}{% endblock %}
-
-    <!-- Favicon -->    
-
-    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon-32x32.png' %}">    <!-- Structured Data (JSON-LD) -->
-
-    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon-16x16.png' %}">    <script type="application/ld+json">
-
-    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/apple-touch-icon.png' %}">    {
-
-    <link rel="manifest" href="{% static 'site.webmanifest' %}">        "@context": "https://schema.org",
-
-            "@type": "{% block schema_type %}WebSite{% endblock %}",
-
-    <!-- Theme Color -->        "name": "Your Brand Name",
-
-    <meta name="theme-color" content="#3b82f6">        "url": "{{ request.scheme }}://{{ request.get_host }}",
-
-    <meta name="msapplication-TileColor" content="#3b82f6">        "description": "{% block schema_description %}Your comprehensive Django application with modern design and functionality.{% endblock %}",
-
-            "publisher": {
-
-    <!-- TailwindCSS Output (Auto-generated by django-tailwind-cli) -->            "@type": "Organization",
-
-    {% tailwind_css %}            "name": "Your Brand Name",
-
-                "logo": {
-
-    <!-- Alpine.js - Lightweight JavaScript Framework -->                "@type": "ImageObject",
-
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>                "url": "{% static 'images/logo.png' %}"
-
-                }
-
-    <!-- HTMX - Modern Browser Features from HTML -->        }
-
-    <script src="https://unpkg.com/htmx.org@2.0.3"></script>    }
-
-        </script>
-
-    <!-- Additional Stylesheets -->    
-
-    {% block extra_css %}{% endblock %}    {% block extra_head %}{% endblock %}
-
-    </head>
-
-    <!-- Structured Data (JSON-LD) -->
-
-    <script type="application/ld+json"><body class="bg-primary text-primary transition-theme antialiased" x-data="{ darkMode: false }" :class="{ 'dark': darkMode }">
-
-    {    <!-- Skip to main content for accessibility -->
-
-        "@context": "https://schema.org",    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary text-white px-4 py-2 rounded-md z-50">
-
-        "@type": "{% block schema_type %}WebSite{% endblock %}",        Skip to main content
-
-        "name": "Your Brand Name",    </a>
-
-        "url": "{{ request.scheme }}://{{ request.get_host }}",
-
-        "description": "{% block schema_description %}Your comprehensive Django application with modern design and functionality.{% endblock %}",    <!-- Header/Navigation -->
-
-        "publisher": {    <header class="bg-secondary border-b border-custom sticky top-0 z-40 transition-theme">
-
-            "@type": "Organization",        <nav class="container py-4" x-data="{ mobileMenuOpen: false }">
-
-            "name": "Your Brand Name",            <div class="flex items-center justify-between">
-
-            "logo": {                <div class="flex items-center space-x-2">
-
-                "@type": "ImageObject",                    <a href="/" class="text-2xl font-bold" style="color: rgb(var(--color-logo))">
-
-                "url": "{% static 'images/logo.png' %}"                        YourLogo
-
-            }                    </a>
-
-        }                </div>
-
-    }                
-
-    </script>                <div class="hidden md:flex items-center space-x-6">
-
-                        <a href="/" class="text-primary hover:text-subtitle transition">Home</a>
-
-    {% block extra_head %}{% endblock %}                    <a href="#" class="text-primary hover:text-subtitle transition">About</a>
-
-</head>                    <a href="#" class="text-primary hover:text-subtitle transition">Services</a>
-
-                    <a href="#" class="text-primary hover:text-subtitle transition">Contact</a>
-
-<body class="bg-primary text-primary transition-theme antialiased" x-data="{ darkMode: false }" :class="{ 'dark': darkMode }">                </div>
-
-    <!-- Skip to main content for accessibility -->                
-
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary text-white px-4 py-2 rounded-md z-50">                <!-- Dark Mode Toggle (Alpine.js) -->
-
-        Skip to main content                <button 
-
-    </a>                    @click="darkMode = !darkMode; localStorage.setItem('darkMode', darkMode)"
-
-                    x-init="darkMode = localStorage.getItem('darkMode') === 'true'"
-
-    <!-- Header/Navigation -->                    type="button" 
-
-    <header class="bg-secondary border-b border-custom sticky top-0 z-40 transition-theme">                    class="p-2 rounded-lg hover:bg-tertiary transition" 
-
-        <nav class="container py-4" x-data="{ mobileMenuOpen: false }">                    aria-label="Toggle dark mode"
-
-            <div class="flex items-center justify-between">                >
-
-                <div class="flex items-center space-x-2">                    <svg x-show="!darkMode" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-
-                    <a href="/" class="text-2xl font-bold" style="color: rgb(var(--color-logo))">                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-
-                        YourLogo                    </svg>
-
-                    </a>                    <svg x-show="darkMode" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-
-                </div>                        <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
-
-                                    </svg>
-
-                <div class="hidden md:flex items-center space-x-6">                </button>
-
-                    <a href="/" class="text-primary hover:text-subtitle transition">Home</a>                
-
-                    <a href="#" class="text-primary hover:text-subtitle transition">About</a>                <!-- Mobile Menu Button (Alpine.js) -->
-
-                    <a href="#" class="text-primary hover:text-subtitle transition">Services</a>                <button 
-
-                    <a href="#" class="text-primary hover:text-subtitle transition">Contact</a>                    @click="mobileMenuOpen = !mobileMenuOpen"
-
-                </div>                    class="md:hidden p-2 rounded-lg hover:bg-tertiary transition" 
-
-                                    aria-label="Toggle menu"
-
-                <!-- Dark Mode Toggle (Alpine.js) -->                >
-
-                <button                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-
-                    @click="darkMode = !darkMode; localStorage.setItem('darkMode', darkMode)"                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-
-                    x-init="darkMode = localStorage.getItem('darkMode') === 'true'"                    </svg>
-
-                    type="button"                 </button>
-
-                    class="p-2 rounded-lg hover:bg-tertiary transition"             </div>
-
-                    aria-label="Toggle dark mode"            
-
-                >            <!-- Mobile Menu (Alpine.js) -->
-
-                    <svg x-show="!darkMode" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">            <div x-show="mobileMenuOpen" x-transition class="md:hidden mt-4 pb-4 space-y-2">
-
-                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>                <a href="/" class="block text-primary hover:text-subtitle transition py-2">Home</a>
-
-                    </svg>                <a href="#" class="block text-primary hover:text-subtitle transition py-2">About</a>
-
-                    <svg x-show="darkMode" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">                <a href="#" class="block text-primary hover:text-subtitle transition py-2">Services</a>
-
-                        <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>                <a href="#" class="block text-primary hover:text-subtitle transition py-2">Contact</a>
-
-                    </svg>            </div>
-
-                </button>        </nav>
-
-                    </header>
-
-                <!-- Mobile Menu Button (Alpine.js) -->
-
-                <button     <!-- Main Content -->
-
-                    @click="mobileMenuOpen = !mobileMenuOpen"    <main id="main-content" class="min-h-screen">
-
-                    class="md:hidden p-2 rounded-lg hover:bg-tertiary transition"         <!-- Messages -->
-
-                    aria-label="Toggle menu"        {% if messages %}
-
-                >        <div class="container mt-6">
-
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">            {% for message in messages %}
-
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>            <div class="{% if message.tags == 'error' %}bg-red-100 border-red-400 text-red-700{% elif message.tags == 'success' %}bg-green-100 border-green-400 text-green-700{% elif message.tags == 'warning' %}bg-yellow-100 border-yellow-400 text-yellow-700{% else %}bg-blue-100 border-blue-400 text-blue-700{% endif %} border px-4 py-3 rounded relative mb-4" role="alert">
-
-                    </svg>                <span class="block sm:inline">{{ message }}</span>
-
-                </button>            </div>
-
-            </div>            {% endfor %}
-
-                    </div>
-
-            <!-- Mobile Menu (Alpine.js) -->        {% endif %}
-
-            <div x-show="mobileMenuOpen" x-transition class="md:hidden mt-4 pb-4 space-y-2">        
-
-                <a href="/" class="block text-primary hover:text-subtitle transition py-2">Home</a>        <!-- Page Content -->
-
-                <a href="#" class="block text-primary hover:text-subtitle transition py-2">About</a>        {% block content %}{% endblock %}
-
-                <a href="#" class="block text-primary hover:text-subtitle transition py-2">Services</a>    </main>
-
-                <a href="#" class="block text-primary hover:text-subtitle transition py-2">Contact</a>
-
-            </div>    <!-- Footer -->
-
-        </nav>    <footer class="bg-secondary border-t border-custom mt-16 transition-theme">
-
-    </header>        <div class="container py-8">
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-    <!-- Main Content -->                <div>
-
-    <main id="main-content" class="min-h-screen">                    <h3 class="text-title font-bold text-lg mb-4">About Us</h3>
-
-        <!-- Messages -->                    <p class="text-secondary">Your comprehensive Django application with modern design and functionality.</p>
-
-        {% if messages %}                </div>
-
-        <div class="container mt-6">                <div>
-
-            {% for message in messages %}                    <h3 class="text-title font-bold text-lg mb-4">Quick Links</h3>
-
-            <div class="alert {% if message.tags == 'error' %}alert-error{% elif message.tags == 'success' %}alert-success{% elif message.tags == 'warning' %}alert-warning{% else %}alert-info{% endif %}" role="alert">                    <ul class="space-y-2">
-
-                <span>{{ message }}</span>                        <li><a href="#" class="text-secondary hover:text-subtitle transition">Privacy Policy</a></li>
-
-            </div>                        <li><a href="#" class="text-secondary hover:text-subtitle transition">Terms of Service</a></li>
-
-            {% endfor %}                        <li><a href="#" class="text-secondary hover:text-subtitle transition">Contact</a></li>
-
-        </div>                    </ul>
-
-        {% endif %}                </div>
-
-                        <div>
-
-        <!-- Page Content -->                    <h3 class="text-title font-bold text-lg mb-4">Follow Us</h3>
-
-        {% block content %}{% endblock %}                    <div class="flex space-x-4">
-
-    </main>                        <a href="#" class="text-secondary hover:text-subtitle transition" aria-label="Facebook">
-
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-
-    <!-- Footer -->                        </a>
-
-    <footer class="bg-secondary border-t border-custom mt-16 transition-theme">                        <a href="#" class="text-secondary hover:text-subtitle transition" aria-label="Twitter">
-
-        <div class="container py-8">                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">                        </a>
-
-                <div>                    </div>
-
-                    <h3 class="text-title font-bold text-lg mb-4">About Us</h3>                </div>
-
-                    <p class="text-secondary">Your comprehensive Django application with modern design and functionality.</p>            </div>
-
-                </div>            <div class="border-t border-custom mt-8 pt-8 text-center text-secondary">
-
-                <div>                <p>&copy; 2025 Your Brand Name. All rights reserved.</p>
-
-                    <h3 class="text-title font-bold text-lg mb-4">Quick Links</h3>            </div>
-
-                    <ul class="space-y-2">        </div>
-
-                        <li><a href="#" class="text-secondary hover:text-subtitle transition">Privacy Policy</a></li>    </footer>
-
-                        <li><a href="#" class="text-secondary hover:text-subtitle transition">Terms of Service</a></li>
-
-                        <li><a href="#" class="text-secondary hover:text-subtitle transition">Contact</a></li>    {% block extra_js %}{% endblock %}
-
-                    </ul></body>
-
-                </div></html>
-
-                <div>```
-
-                    <h3 class="text-title font-bold text-lg mb-4">Follow Us</h3>
-
-                    <div class="flex space-x-4">---
-
-                        <a href="#" class="text-secondary hover:text-subtitle transition" aria-label="Facebook">
-
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>## 🔧 Step 9: Configure URLs for Static and Media Files
-
-                        </a>
-
-                        <a href="#" class="text-secondary hover:text-subtitle transition" aria-label="Twitter">### Update `config/urls.py`
-
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>```python
-
-                        </a>from django.contrib import admin
-
-                    </div>from django.urls import path, include
-
-                </div>from django.conf import settings
-
-            </div>from django.conf.urls.static import static
-
-            <div class="border-t border-custom mt-8 pt-8 text-center text-secondary">
-
-                <p>&copy; 2025 Your Brand Name. All rights reserved.</p>urlpatterns = [
-
-            </div>    path('admin/', admin.site.urls),
-
-        </div>    path('', include('core.urls')),
-
-    </footer>    path("__reload__/", include("django_browser_reload.urls")),  # Browser auto-reload
-
-]
-
-    {% block extra_js %}{% endblock %}
-
-</body># Serve static and media files in development
-
-</html>if settings.DEBUG:
-
-```    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
----```
-
-
-
-## 🔧 Step 9: Configure URLs for Static and Media Files### Create `core/urls.py`
-
-```python
-
-### Update `config/urls.py`from django.urls import path
-
-```pythonfrom . import views
-
-from django.contrib import admin
-
-from django.urls import path, includeapp_name = 'core'
-
-from django.conf import settings
-
-from django.conf.urls.static import staticurlpatterns = [
-
     path('', views.home, name='home'),
+]
+```
 
-urlpatterns = []
+### Step 8: Create Views and Templates
 
-    path('admin/', admin.site.urls),```
+#### View - `core/views.py`
 
-    path('', include('core.urls')),
-
-    path("__reload__/", include("django_browser_reload.urls")),  # Browser auto-reload### Create `core/views.py`
-
-]```python
-
+```python
 from django.shortcuts import render
 
-# Serve static and media files in development
-
-if settings.DEBUG:def home(request):
-
-    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)    return render(request, 'core/home.html')
-
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)```
-
+def home(request):
+    return render(request, 'core/home.html')
 ```
 
-### Create `templates/core/home.html`
-
-### Create `core/urls.py````html
-
-```python{% extends 'base.html' %}
-
-from django.urls import path
-
-from . import views{% block title %}Home{% endblock %}
-
-
-
-app_name = 'core'{% block content %}
-
-<div class="container py-16">
-
-urlpatterns = [    <div class="text-center">
-
-    path('', views.home, name='home'),        <h1 class="text-title text-5xl font-bold mb-4">Welcome to Django + TailwindCSS</h1>
-
-]        <p class="text-description text-xl mb-8">Built with django-tailwind-cli and DaisyUI - No Node.js Required!</p>
-
-```        
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-
-### Create `core/views.py`            <div class="card">
-
-```python                <h2 class="card-title">Fast Setup</h2>
-
-from django.shortcuts import render                <p class="card-body">Get started quickly with no Node.js or npm dependencies.</p>
-
-            </div>
-
-def home(request):            
-
-    return render(request, 'core/home.html')            <div class="card">
-
-```                <h2 class="card-title">Modern Design</h2>
-
-                <p class="card-body">Beautiful UI with TailwindCSS and DaisyUI components.</p>
-
-### Create `templates/core/home.html`            </div>
-
-```html            
-
-{% extends 'base.html' %}            <div class="card">
-
-                <h2 class="card-title">SEO Ready</h2>
-
-{% block title %}Home{% endblock %}                <p class="card-body">Optimized templates with comprehensive SEO meta tags.</p>
-
-            </div>
-
-{% block content %}        </div>
-
-<div class="container py-16">    </div>
-
-    <div class="text-center"></div>
-
-        <h1 class="text-title text-5xl font-bold mb-4">Welcome to Django + TailwindCSS</h1>{% endblock %}
-
-        <p class="text-description text-xl mb-8">Built with django-tailwind-cli and DaisyUI - No Node.js Required!</p>```
-
-        
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">---
-
-            <div class="card bg-base-100 shadow-xl">
-
-                <div class="card-body">## 🗃️ Step 10: Collect Static Files
-
-                    <h2 class="card-title">Fast Setup</h2>
-
-                    <p>Get started quickly with no Node.js or npm dependencies.</p>### Collect all static files for production
-
-                </div>```bash
-
-            </div>uv run manage.py collectstatic --noinput
-
-            ```
-
-            <div class="card bg-base-100 shadow-xl">
-
-                <div class="card-body">This command will:
-
-                    <h2 class="card-title">Modern Design</h2>- Copy all static files from your apps and `STATICFILES_DIRS` to `STATIC_ROOT`
-
-                    <p>Beautiful UI with TailwindCSS and DaisyUI components.</p>- Make files ready for production deployment
-
-                </div>- Include your compiled CSS from TailwindCSS
-
-            </div>
-
-            **Note:** Run this command every time you update static files before deploying to production.
-
-            <div class="card bg-base-100 shadow-xl">
-
-                <div class="card-body">---
-
-                    <h2 class="card-title">SEO Ready</h2>
-
-                    <p>Optimized templates with comprehensive SEO meta tags.</p>## 🚀 Step 11: Run Migrations and Create Superuser
-
-                </div>
-
-            </div>### Run database migrations
-
-        </div>```bash
-
-    </div>uv run manage.py makemigrations
-
-</div>uv run manage.py migrate
-
-{% endblock %}```
-
-```
-
-### Create admin superuser
-
----```bash
-
-uv run manage.py createsuperuser
-
-## 🗃️ Step 10: Collect Static Files```
-
-
-
-### Collect all static files for productionFollow the prompts to set username, email, and password.
-
-```bash
-
-uv run manage.py collectstatic --noinput---
-
-```
-
-## ▶️ Step 12: Run Development Server
-
-This command will:
-
-- Copy all static files from your apps and `STATICFILES_DIRS` to `STATIC_ROOT`### Option 1: Standard Django server
-
-- Make files ready for production deployment```bash
-
-- Include your compiled CSS from TailwindCSSuv run manage.py runserver
-
-```
-
-**Note:** Run this command every time you update static files before deploying to production.
-
-### Option 2: With TailwindCSS auto-compilation (Recommended)
-
----```bash
-
-uv run manage.py tailwind runserver
-
-## 🚀 Step 11: Run Migrations and Create Superuser```
-
-
-
-### Run database migrationsThis command starts both:
-
-```bash- Django development server on **http://127.0.0.1:8000/**
-
-uv run manage.py makemigrations- TailwindCSS watch mode (auto-rebuilds CSS on changes)
-
-uv run manage.py migrate
-
-```Visit: **http://127.0.0.1:8000/**  
-
-Admin panel: **http://127.0.0.1:8000/admin/**
-
-### Create admin superuser
-
-```bash**Benefits:**
-
-uv run manage.py createsuperuser- ✅ Auto browser reload on file changes
-
-```- ✅ Auto CSS compilation on template/CSS changes
-
-- ✅ Single command for full dev environment
-
-Follow the prompts to set username, email, and password.
-
----
-
----
-
-## 🎨 Step 13: Using DaisyUI Components
-
-## ▶️ Step 12: Run Development Server
-
-## 🎨 Step 13: Using DaisyUI Components
-
-### Option 1: Standard Django server
-
-```bash### Available DaisyUI Themes
-
-uv run manage.py runserverYou configured these themes in `source.css`:
-
-```- light, dark, cupcake, synthwave, retro, cyberpunk, valentine, halloween, garden, forest, aqua, lofi, pastel, fantasy, wireframe, black, luxury, dracula, cmyk, autumn, business, acid, lemonade, night, coffee, winter
-
-
-
-### Option 2: With TailwindCSS auto-compilation (Recommended)### Switch themes dynamically
-
-```bash```html
-
-uv run manage.py tailwind runserver<!-- Add to your template -->
-
-```<select data-choose-theme class="select select-bordered">
-
-    <option value="light">Light</option>
-
-This command starts both:    <option value="dark">Dark</option>
-
-- Django development server on **http://127.0.0.1:8000/**    <option value="cupcake">Cupcake</option>
-
-- TailwindCSS watch mode (auto-rebuilds CSS on changes)    <option value="synthwave">Synthwave</option>
-
-    <option value="retro">Retro</option>
-
-Visit: **http://127.0.0.1:8000/**  </select>
-
-Admin panel: **http://127.0.0.1:8000/admin/**```
-
-
-
-**Benefits:**### Example DaisyUI Components
-
-- ✅ Auto browser reload on file changes
-
-- ✅ Auto CSS compilation on template/CSS changes**Button:**
-
-- ✅ Single command for full dev environment```html
-
-<button class="btn btn-primary">Primary Button</button>
-
----<button class="btn btn-secondary">Secondary Button</button>
-
-<button class="btn btn-accent">Accent Button</button>
-
-## 🎨 Step 13: Using DaisyUI Components```
-
-
-
-### Available DaisyUI Themes**Card:**
-
-You configured these themes in `source.css`:```html
-
-- light, dark, cupcake, synthwave, retro, cyberpunk, valentine, halloween, garden, forest, aqua, lofi, pastel, fantasy, wireframe, black, luxury, dracula, cmyk, autumn, business, acid, lemonade, night, coffee, winter<div class="card bg-base-100 shadow-xl">
-
-    <div class="card-body">
-
-### Switch themes dynamically        <h2 class="card-title">Card Title</h2>
-
-```html        <p>Card content goes here</p>
-
-<!-- Add theme switcher -->        <div class="card-actions justify-end">
-
-<select data-choose-theme class="select select-bordered">            <button class="btn btn-primary">Action</button>
-
-    <option value="light">Light</option>        </div>
-
-    <option value="dark">Dark</option>    </div>
-
-    <option value="cupcake">Cupcake</option></div>
-
-    <option value="synthwave">Synthwave</option>```
-
-    <option value="retro">Retro</option>
-
-</select>**Alert:**
+#### Base Template - `templates/base.html`
 
 ```html
+{% load static %}
+{% load tailwind_cli %}
+<!DOCTYPE html>
+<!-- Consider setting the lang attribute dynamically based on request language -->
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Search Engine Optimization (SEO) Tags -->
+    <!-- Title Tag: Crucial for SEO. Keep it concise (50-60 chars) and relevant. -->
+    <title>{% block page_title %}Default Page Title - My App{% endblock page_title %}</title>
+    
+    <!-- Meta Description: A brief summary of the page (150-160 chars). -->
+    <meta name="description" content="{% block meta_description %}Default description for My App. Describe your page content here.{% endblock meta_description %}">
+    
+    <!-- Meta Keywords (Less important for Google, but can be used by others) -->
+    <meta name="keywords" content="{% block meta_keywords %}default, keywords, my, app{% endblock meta_keywords %}">
+    
+    <!-- Canonical URL: Helps prevent duplicate content issues. -->
+    <!-- This provides a default, but you should override `canonical_url` in child templates for accuracy. -->
+    <link rel="canonical" href="{% block canonical_url %}{{ request.build_absolute_uri }}{% endblock canonical_url %}">
+    
+    <!-- Open Graph (OG) Tags for Social Media (Facebook, LinkedIn, etc.) -->
+    <!-- By default, they inherit from page_title and meta_description, but can be overridden -->
+    <meta property="og:title" content="{% block og_title %}{% block page_title_og %}{% endblock page_title_og %}{% endblock og_title %}">
+    <meta property="og:description" content="{% block og_description %}{% block meta_description_og %}{% endblock meta_description_og %}{% endblock og_description %}">
+    <meta property="og:type" content="website">
+    <!-- Replace with your default site image -->
+    <meta property="og:image" content="{% block og_image %}{% static 'images/default_og_image.png' %}{% endblock og_image %}">
+    <meta property="og:url" content="{% block og_url %}{{ request.build_absolute_uri }}{% endblock og_url %}">
+    <meta property="og:site_name" content="My App">
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- Replace with your Twitter handle if you have one -->
+    <meta name="twitter:site" content="@YourTwitterHandle">
+    <meta name="twitter:title" content="{% block twitter_title %}{% block page_title_twitter %}{% endblock page_title_twitter %}{% endblock twitter_title %}">
+    <meta name="twitter:description" content="{% block twitter_description %}{% block meta_description_twitter %}{% endblock meta_description_twitter %}{% endblock twitter_description %}">
+    <!-- Replace with your default site image -->
+    <meta name="twitter:image" content="{% block twitter_image %}{% static 'images/default_twitter_image.png' %}{% endblock twitter_image %}">
 
-<!-- Add theme change JavaScript --><div class="alert alert-success">
+    <!-- Favicon -->
+    <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+    <link rel="apple-touch-icon" href="{% static 'apple-touch-icon.png' %}">
+    
+    <!-- Tailwind CSS -->
+    {% tailwind_css %}
+    
+    <!-- Alpine.js -->
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
+    <!-- HTMX -->
+    <script src="https://unpkg.com/htmx.org@2.0.3"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>    <span>Success! Your operation completed.</span>
-
-```</div>
+    <!-- Allow extra head content -->
+    {% block extra_head %}{% endblock extra_head %}
+</head>
+<body x-data="{ darkMode: false }" :data-theme="darkMode ? 'dark' : 'light'" class="min-h-screen bg-base-100 text-base-content antialiased flex flex-col">
+    
+    
+    
+    <!-- Main content area -->
+    <main id="main-content" class="p-4 md:p-8 flex-grow">
+        <!-- Replaced the original title block with page_title for consistency -->
+        {% block content %}{% endblock %}
+    </main>
+    
+    
+    
+    <!-- Extra body scripts -->
+    {% block extra_scripts %}{% endblock extra_scripts %}
+</body>
+</html>
 
 ```
 
-### Example DaisyUI Components
-
-**Badge:**
-
-**Buttons:**```html
-
-```html<span class="badge badge-primary">Primary</span>
-
-<button class="btn btn-primary">Primary Button</button><span class="badge badge-secondary">Secondary</span>
-
-<button class="btn btn-secondary">Secondary Button</button>```
-
-<button class="btn btn-accent">Accent Button</button>
-
-<button class="btn btn-ghost">Ghost Button</button>**Modal:**
-
-<button class="btn btn-link">Link Button</button>```html
-
-```<dialog id="my_modal" class="modal">
-
-    <div class="modal-box">
-
-**Cards:**        <h3 class="font-bold text-lg">Hello!</h3>
-
-```html        <p class="py-4">This is a modal dialog</p>
-
-<div class="card bg-base-100 shadow-xl">        <div class="modal-action">
-
-    <figure><img src="https://via.placeholder.com/400x225" alt="Album" /></figure>            <form method="dialog">
-
-    <div class="card-body">                <button class="btn">Close</button>
-
-        <h2 class="card-title">Card Title</h2>            </form>
-
-        <p>Card content goes here</p>        </div>
-
-        <div class="card-actions justify-end">    </div>
-
-            <button class="btn btn-primary">Buy Now</button></dialog>
-
-        </div><button class="btn" onclick="my_modal.showModal()">Open Modal</button>
-
-    </div>```
-
-</div>
-
-```**Navbar:**
+#### Home Template - `templates/core/home.html`
 
 ```html
-
-**Alerts:**<div class="navbar bg-base-100">
-
-```html    <div class="flex-1">
-
-<div class="alert alert-success">        <a class="btn btn-ghost text-xl">MyApp</a>
-
-    <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>    </div>
-
-    <span>Your purchase has been confirmed!</span>    <div class="flex-none">
-
-</div>        <ul class="menu menu-horizontal px-1">
-
-            <li><a>Link</a></li>
-
-<div class="alert alert-warning">            <li><a>Link</a></li>
-
-    <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>        </ul>
-
-    <span>Warning: Invalid email address!</span>    </div>
-
-</div></div>
-
-``````
-
-
-
-**Badges:**See all components: [https://daisyui.com/components/](https://daisyui.com/components/)
-
-```html
-
-<span class="badge badge-primary">Primary</span>---
-
-<span class="badge badge-secondary">Secondary</span>
-
-<span class="badge badge-accent">Accent</span>## 🔥 Step 14: Alpine.js Examples
-
-<span class="badge badge-ghost">Ghost</span>
-
-```### Toggle Example
-
-```html
-
-**Modal:**<div x-data="{ open: false }">
-
-```html    <button @click="open = !open" class="btn btn-primary">Toggle</button>
-
-<button class="btn" onclick="my_modal.showModal()">Open Modal</button>    <div x-show="open" class="alert alert-info mt-4">
-
-        This content can be toggled!
-
-<dialog id="my_modal" class="modal">    </div>
-
-    <div class="modal-box"></div>
-
-        <h3 class="font-bold text-lg">Hello!</h3>```
-
-        <p class="py-4">Press ESC key or click the button below to close</p>
-
-        <div class="modal-action">### Counter Example
-
-            <form method="dialog">```html
-
-                <button class="btn">Close</button><div x-data="{ count: 0 }">
-
-            </form>    <button @click="count++" class="btn btn-success">Increment</button>
-
-        </div>    <button @click="count--" class="btn btn-error">Decrement</button>
-
-    </div>    <p class="text-xl mt-4">Count: <span x-text="count"></span></p>
-
-</dialog></div>
-
-``````
-
-
-
-**Navbar:**### Dropdown Example
-
-```html```html
-
-<div class="navbar bg-base-100"><div x-data="{ isOpen: false }" @click.away="isOpen = false">
-
-    <div class="flex-1">    <button @click="isOpen = !isOpen" class="btn btn-primary">
-
-        <a class="btn btn-ghost text-xl">daisyUI</a>        Menu
-
-    </div>    </button>
-
-    <div class="flex-none">    <ul x-show="isOpen" class="menu bg-base-200 w-56 rounded-box mt-2">
-
-        <ul class="menu menu-horizontal px-1">        <li><a>Item 1</a></li>
-
-            <li><a>Link</a></li>        <li><a>Item 2</a></li>
-
-            <li>        <li><a>Item 3</a></li>
-
-                <details>    </ul>
-
-                    <summary>Parent</summary></div>
-
-                    <ul class="p-2 bg-base-100 rounded-t-none">```
-
-                        <li><a>Link 1</a></li>
-
-                        <li><a>Link 2</a></li>---
-
-                    </ul>
-
-                </details>## ⚡ Step 15: HTMX Examples
-
-            </li>
-
-        </ul>### Load Content Without Page Reload
-
-    </div>```html
-
-</div><!-- Button to load content -->
-
-```<button hx-get="{% url 'load_content' %}" 
-
-        hx-target="#content" 
-
-See all components: [https://daisyui.com/components/](https://daisyui.com/components/)        hx-swap="innerHTML"
-
-        class="btn btn-primary">
-
----    Load Content
-
-</button>
-
-## 🔥 Step 14: Alpine.js Examples
-
-<!-- Content will appear here -->
-
-### Toggle Example<div id="content"></div>
-
-```html```
-
-<div x-data="{ open: false }">
-
-    <button @click="open = !open" class="btn btn-primary">Toggle</button>**Django View:**
-
-    <div x-show="open" x-transition class="alert alert-info mt-4">```python
-
-        This content can be toggled!def load_content(request):
-
-    </div>    return render(request, 'partials/content.html')
-
-</div>```
-
-```
-
-### Form Submission with HTMX
-
-### Counter Example```html
-
-```html<form hx-post="{% url 'submit_form' %}" 
-
-<div x-data="{ count: 0 }" class="text-center">      hx-target="#result"
-
-    <button @click="count++" class="btn btn-success">Increment</button>      hx-swap="innerHTML">
-
-    <button @click="count--" class="btn btn-error">Decrement</button>    {% csrf_token %}
-
-    <p class="text-2xl mt-4">Count: <span x-text="count" class="font-bold"></span></p>    <input type="text" name="name" placeholder="Name" class="input input-bordered">
-
-</div>    <button type="submit" class="btn btn-primary">Submit</button>
-
-```</form>
-
-
-
-### Dropdown Example<div id="result"></div>
-
-```html```
-
-<div x-data="{ isOpen: false }" @click.away="isOpen = false" class="relative">
-
-    <button @click="isOpen = !isOpen" class="btn btn-primary">**Django View:**
-
-        Menu```python
-
-    </button>def submit_form(request):
-
-    <ul x-show="isOpen" x-transition class="menu bg-base-200 w-56 rounded-box mt-2 absolute">    if request.method == 'POST' and request.htmx:
-
-        <li><a>Item 1</a></li>        name = request.POST.get('name')
-
-        <li><a>Item 2</a></li>        return HttpResponse(f'<p class="alert alert-success">Hello, {name}!</p>')
-
-        <li><a>Item 3</a></li>    return HttpResponse('Invalid request')
-
-    </ul>```
-
-</div>
-
-```### Infinite Scroll
-
-```html
-
-### Form Validation<div id="posts">
-
-```html    {% for post in posts %}
-
-<div x-data="{ email: '', isValid: false }">    <div class="card bg-base-100 shadow-xl mb-4">
-
-    <input         <div class="card-body">
-
-        x-model="email"             <h2 class="card-title">{{ post.title }}</h2>
-
-        @input="isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)"            <p>{{ post.content }}</p>
-
-        type="email"         </div>
-
-        placeholder="Email"     </div>
-
-        class="input input-bordered w-full max-w-xs"    {% endfor %}
-
-    ></div>
-
-    <p x-show="email && !isValid" class="text-error mt-2">Invalid email address</p>
-
-    <p x-show="isValid" class="text-success mt-2">Valid email!</p><!-- Load more trigger -->
-
-</div><div hx-get="{% url 'load_more_posts' %}?page=2" 
-
-```     hx-trigger="revealed" 
-
-     hx-target="#posts" 
-
----     hx-swap="beforeend">
-
-    <span class="loading loading-spinner loading-lg"></span>
-
-## ⚡ Step 15: HTMX Examples</div>
-
-```
-
-### Load Content Without Page Reload
-
-```html---
-
-<!-- Button to load content -->
-
-<button hx-get="{% url 'load_content' %}" ## 🔐 Step 16: Additional Security Configuration
-
-        hx-target="#content" 
-
-        hx-swap="innerHTML"### Update `config/settings.py` for production
-
-        class="btn btn-primary">
-
-    Load ContentWhen deploying to production, update these settings:
-
-</button>
-
-```python
-
-<!-- Content will appear here --># Production Security Settings
-
-<div id="content" class="mt-4"></div>DEBUG = False
-
-```ALLOWED_HOSTS = ['yourdomain.com', 'www.yourdomain.com']
-
-
-
-**Django View:**# HTTPS Settings
-
-```pythonSECURE_SSL_REDIRECT = True
-
-def load_content(request):SESSION_COOKIE_SECURE = True
-
-    return render(request, 'partials/content.html', {'data': 'Hello from HTMX!'})CSRF_COOKIE_SECURE = True
-
-```SECURE_BROWSER_XSS_FILTER = True
-
-SECURE_CONTENT_TYPE_NOSNIFF = True
-
-### Form Submission with HTMXX_FRAME_OPTIONS = 'DENY'
-
-```htmlSECURE_HSTS_SECONDS = 31536000
-
-<form hx-post="{% url 'submit_form' %}" SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-
-      hx-target="#result"SECURE_HSTS_PRELOAD = True
-
-      hx-swap="innerHTML"
-
-      class="space-y-4"># Secret Key - Use environment variable
-
-    {% csrf_token %}import os
-
-    <input type="text" name="name" placeholder="Your Name" class="input input-bordered w-full">SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'your-secret-key-here')
-
-    <button type="submit" class="btn btn-primary">Submit</button>```
-
-</form>
-
----
-
-<div id="result" class="mt-4"></div>
-
-```## 📚 Step 17: Django Extensions Useful Commands
-
-
-
-**Django View:**### Shell Plus (Enhanced Django shell)
-
-```python```bash
-
-from django.http import HttpResponseuv run manage.py shell_plus
-
-```
-
-def submit_form(request):
-
-    if request.method == 'POST' and request.htmx:### Show URLs
-
-        name = request.POST.get('name', '')```bash
-
-        return HttpResponse(f'<div class="alert alert-success">Hello, {name}!</div>')uv run manage.py show_urls
-
-    return HttpResponse('<div class="alert alert-error">Invalid request</div>')```
-
-```
-
-### Generate Secret Key
-
-### Infinite Scroll```bash
-
-```htmluv run manage.py generate_secret_key
-
-<div id="posts">```
-
-    {% for post in posts %}
-
-    <div class="card bg-base-100 shadow-xl mb-4">### Clean PyC files
-
-        <div class="card-body">```bash
-
-            <h2 class="card-title">{{ post.title }}</h2>uv run manage.py clean_pyc
-
-            <p>{{ post.content }}</p>```
-
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="hero min-h-screen bg-base-200">
+    <div class="hero-content text-center">
+        <div class="max-w-md">
+            <h1 class="text-5xl font-bold text-primary">Welcome to Django!</h1>
+            <p class="py-6">
+                <span class="badge badge-primary">Django</span> 
+                <span class="badge badge-secondary">Tailwind</span> 
+                <span class="badge badge-accent">DaisyUI</span>
+            </p>
+            <button class="btn btn-primary">Get Started</button>
         </div>
+    </div>
+</div>
+{% endblock %}
+```
 
-    </div>---
+---
 
-    {% endfor %}
+### style.css
+```css
 
-</div>## 🍯 Step 18: Honeypot Anti-Spam Setup
+:root {
+  /* -- Light Mode Colors -- */
+  --primary: #E3651D;
+  /* Orange */
+  --secondary: #750E21;
+  /* Dark Red */
+  --bg: #ffffff;
+  /* Main background */
+  --secondary-bg: #f3f4f6;
+  /* Gray 100 */
+  --card: #f8f8f8;
+  /* Card background */
+  --title: #e76209;
+  /* Text color (Dark Gray) */
+  --sub-title: #191919;
+  /* Text color */
+  --desc: #191919;
+  /* Text color */
+  --accent: #BED754;
+  /* Light Green */
+  --neutral: #374151;
+  /* Gray 700 */
+  --border-color: #e5e7eb;
+  /* Borders, dividers (Gray 200) */
+  --info: #3b82f6;
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --error: #ef4444;
+}
+
+/* Dark mode using data-theme attribute */
+
+[data-theme="dark"] {
+  /* -- Dark Mode Colors -- */
+  --primary: #E3651D;
+  /* Orange */
+  --secondary: #750E21;
+  /* Dark Red */
+  --bg: #181818;
+  /* Main background (Dark Gray) */
+  --secondary-bg: #750E21;
+  /* Secondary background (Dark Red) */
+  --card: #131313;
+  /* Card background */
+  --title: #ff7332;
+  /* Text color (Light Green) */
+  --sub-title: #BED754;
+  /* Text color */
+  --desc: #BED754;
+  /* Text color */
+  --accent: #BED754;
+  /* Light Green */
+  --neutral: #750E21;
+  /* Dark Red */
+  --border-color: #E3651D;
+  /* Borders (Orange) */
+  --info: #58c7f3;
+  --success: #00ff00;
+  /* Brighter green */
+  --warning: #f3cc30;
+  --error: #ff0000;
+  /* Brighter red */
+}
+
+/* Support prefers-color-scheme for automatic detection */
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    /* -- Dark Mode Colors -- */
+    --primary: #E3651D;
+    /* Orange */
+    --secondary: #750E21;
+    /* Dark Red */
+    --bg: #181818;
+    /* Main background (Dark Gray) */
+    --secondary-bg: #750E21;
+    /* Secondary background (Dark Red) */
+    --card: #131313;
+    /* Card background */
+    --title: #ff7332;
+    /* Text color (Light Green) */
+    --sub-title: #ececec;
+    /* Text color */
+    --desc: #e9e9e9;
+    /* Text color */
+    --accent: #BED754;
+    /* Light Green */
+    --neutral: #750E21;
+    /* Dark Red */
+    --border-color: #E3651D;
+    /* Borders (Orange) */
+    --info: #58c7f3;
+    --success: #00ff00;
+    /* Brighter green */
+    --warning: #f3cc30;
+    --error: #ff0000;
+    /* Brighter red */
+  }
+}
+
+body{
+  background-color: var(--bg);
+  color: var(--title);
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+  font-family: "Inter", sans-serif;
+}
+
+.container{
+  width: 100%;
+}
+
+@media (min-width: 640px){
+  .container{
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px){
+  .container{
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px){
+  .container{
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px){
+  .container{
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px){
+  .container{
+    max-width: 1536px;
+  }
+}
+
+```
+---
+
+## 🏃 Running the Project
+
+### Step 9: Initialize and Run
+
+Execute these commands in order:
+
+#### Download Tailwind CLI and build CSS
+```bash
+uv run manage.py tailwind setup
+```
+
+#### build Tailwind CLI and build CSS
+```bash
+uv run manage.py tailwind build
+```
+
+#### Run database migrations
+```bash
+uv run manage.py migrate
+```
+
+#### Create superuser for admin access
+```bash
+uv run manage.py createsuperuser
+```
 
 
+#### Start development server with Tailwind watch mode
+```bash
+uv run manage.py tailwind runserver
+```
 
-<!-- Load more trigger -->### Add honeypot to forms
+### Access Your Application
 
-<div hx-get="{% url 'load_more_posts' %}?page=2" 
+- **Frontend**: [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
+- **Admin Panel**: [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/)
 
-     hx-trigger="revealed" In your forms, add the honeypot field:
+---
 
-     hx-target="#posts" 
+## 📁 Project Structure
 
-     hx-swap="beforeend"```python
+```
+myproject/
+├── config/                 # Project configuration
+│   ├── __init__.py
+│   ├── asgi.py
+│   ├── settings.py        # Main settings
+│   ├── urls.py            # URL routing
+│   └── wsgi.py
+├── core/                   # Main app
+│   ├── migrations/
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── tests.py
+│   ├── urls.py            # App URLs
+│   └── views.py           # Views
+├── static/                 # Static files
+│   ├── css/
+│   │   ├── source.css     # Tailwind source
+│   │   └── output.css     # Compiled CSS
+│   ├── img/
+│   └── js/
+├── templates/              # HTML templates
+│   ├── base.html          # Base template
+│   └── core/
+│       └── home.html      # Homepage
+├── media/                  # User uploads
+├── .venv/                  # Virtual environment
+├── manage.py              # Django management
+└── requirements.txt       # Dependencies
+```
 
-     class="text-center py-4">from django import forms
+---
 
-    <span class="loading loading-spinner loading-lg"></span>from honeypot.decorators import check_honeypot
+## 🛠️ Tech Stack
+
+| Technology | Purpose | Documentation |
+|------------|---------|---------------|
+| **Django** | Web Framework | [docs.djangoproject.com](https://docs.djangoproject.com/) |
+| **Tailwind CSS** | Utility CSS | [tailwindcss.com](https://tailwindcss.com/) |
+| **DaisyUI** | Component Library | [daisyui.com](https://daisyui.com/) |
+| **Alpine.js** | JavaScript Framework | [alpinejs.dev](https://alpinejs.dev/) |
+| **HTMX** | HTML Attributes | [htmx.org](https://htmx.org/) |
+| **Jazzmin** | Admin Theme | [django-jazzmin.readthedocs.io](https://django-jazzmin.readthedocs.io/) |
+| **uv** | Package Manager | [github.com/astral-sh/uv](https://github.com/astral-sh/uv) |
+
+---
+
+## 🎯 Available DaisyUI Themes
+
+- `light` - Clean light theme
+- `dark` - Dark mode theme
+- `cupcake` - Soft pastel colors
+- `synthwave` - Retro 80s vibes
+- `retro` - Vintage aesthetic
+- `cyberpunk` - Neon futuristic
+
+Change themes in `static/css/source.css` or toggle dynamically with Alpine.js.
+
+---
+
+## 🔧 Development Commands
+
+
+### Run development server with Tailwind watch
+```bash
+uv run manage.py tailwind runserver
+```
+
+#### Build Tailwind CSS for production
+```bash
+uv run manage.py tailwind build
+```
+
+#### Create new Django app
+```bash
+python manage.py startapp app_name
+```
+
+#### Make migrations
+```bash
+python manage.py makemigrations
+```
+
+#### Apply migrations
+```bash
+python manage.py migrate
+```
+
+#### Create superuser
+```bash
+python manage.py createsuperuser
+```
+
+#### Collect static files
+```bash
+python manage.py collectstatic
+```
+
+---
+
+## 📚 Additional Resources
+
+- [Django Documentation](https://docs.djangoproject.com/)
+- [Tailwind CSS Docs](https://tailwindcss.com/docs)
+- [DaisyUI Components](https://daisyui.com/components/)
+- [Alpine.js Documentation](https://alpinejs.dev/start-here)
+- [HTMX Documentation](https://htmx.org/docs/)
+- [django-tailwind-cli GitHub](https://github.com/oliverandrich/django-tailwind-cli)
+
+---
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 💖 Acknowledgments
+
+- Django community for the amazing framework
+- Tailwind CSS team for the utility-first approach
+- DaisyUI for beautiful components
+- All open-source contributors
+
+---
+
+<div align="center">
+  
+**Made with ❤️ and Django**
+
+⭐ Star this repo if you find it helpful!
 
 </div>
-
-```class ContactForm(forms.Form):
-
-    name = forms.CharField(max_length=100)
-
-### Search with Debounce    email = forms.EmailField()
-
-```html    message = forms.CharField(widget=forms.Textarea)
-
-<input type="search" ```
-
-       name="q"
-
-       hx-get="{% url 'search' %}"In your view:
-
-       hx-trigger="keyup changed delay:500ms"```python
-
-       hx-target="#search-results"from honeypot.decorators import check_honeypot
-
-       placeholder="Search..."
-
-       class="input input-bordered w-full">@check_honeypot
-
-def contact_view(request):
-
-<div id="search-results" class="mt-4"></div>    if request.method == 'POST':
-
-```        form = ContactForm(request.POST)
-
-        if form.is_valid():
-
-**Django View:**            # Process form
-
-```python            pass
-
-def search(request):    else:
-
-    query = request.GET.get('q', '')        form = ContactForm()
-
-    results = MyModel.objects.filter(name__icontains=query)[:10]    return render(request, 'contact.html', {'form': form})
-
-    return render(request, 'partials/search_results.html', {'results': results})```
-
-```
-
-In your template:
-
----```html
-
-{% load honeypot %}
-
-## 🔐 Step 16: Additional Security Configuration
-
-<form method="post">
-
-### Update `config/settings.py` for production    {% csrf_token %}
-
-    {% render_honeypot_field %}
-
-When deploying to production, update these settings:    {{ form.as_p }}
-
-    <button type="submit">Submit</button>
-
-```python</form>
-
-# Production Security Settings```
-
-DEBUG = False
-
-ALLOWED_HOSTS = ['yourdomain.com', 'www.yourdomain.com']---
-
-
-
-# HTTPS Settings## 🧩 Step 19: Django Cotton Component Usage
-
-SECURE_SSL_REDIRECT = True
-
-SESSION_COOKIE_SECURE = True### Create a component in `templates/cotton/`
-
-CSRF_COOKIE_SECURE = True
-
-SECURE_BROWSER_XSS_FILTER = TrueExample: `templates/cotton/button.html`
-
-SECURE_CONTENT_TYPE_NOSNIFF = True```html
-
-X_FRAME_OPTIONS = 'DENY'<c-vars primary_color="blue" />
-
-SECURE_HSTS_SECONDS = 31536000
-
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True<button class="px-4 py-2 bg-{{ primary_color }}-500 text-white rounded hover:bg-{{ primary_color }}-600 transition">
-
-SECURE_HSTS_PRELOAD = True    <c-slot />
-
-</button>
-
-# Secret Key - Use environment variable```
-
-import os
-
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'your-secret-key-here')### Use in templates
-
-``````html
-
-{% load cotton %}
-
----
-
-<c-button primary_color="green">
-
-## 📚 Step 17: Django Extensions Useful Commands    Click Me
-
-</c-button>
-
-### Shell Plus (Enhanced Django shell)```
-
-```bash
-
-uv run manage.py shell_plus---
-
-```
-
-## 📦 Step 20: Project Structure
-
-### Show URLs
-
-```bashYour final project structure should look like this:
-
-uv run manage.py show_urls
-
-``````
-
-myproject/
-
-### Generate Secret Key├── .venv/
-
-```bash├── config/
-
-uv run manage.py generate_secret_key│   ├── __init__.py
-
-```│   ├── settings.py
-
-│   ├── urls.py
-
-### Clean PyC files│   ├── asgi.py
-
-```bash│   └── wsgi.py
-
-uv run manage.py clean_pyc├── core/
-
-```│   ├── migrations/
-
-│   ├── __init__.py
-
----│   ├── admin.py
-
-│   ├── apps.py
-
-## 🍯 Step 18: Honeypot Anti-Spam Setup│   ├── models.py
-
-│   ├── tests.py
-
-### Add honeypot to forms│   ├── urls.py
-
-│   └── views.py
-
-In your forms, add the honeypot field:├── templates/
-
-│   ├── base.html
-
-```python│   ├── core/
-
-from django import forms│   │   └── home.html
-
-from honeypot.decorators import check_honeypot│   └── cotton/
-
-│       └── button.html
-
-class ContactForm(forms.Form):├── static/
-
-    name = forms.CharField(max_length=100)│   ├── css/
-
-    email = forms.EmailField()│   │   ├── source.css
-
-    message = forms.CharField(widget=forms.Textarea)│   │   └── output.css
-
-```│   ├── js/
-
-│   └── images/
-
-In your view:├── media/
-
-```python├── staticfiles/
-
-from honeypot.decorators import check_honeypot├── manage.py
-
-├── requirements.txt
-
-@check_honeypot└── README.md
-
-def contact_view(request):```
-
-    if request.method == 'POST':
-
-        form = ContactForm(request.POST)---
-
-        if form.is_valid():
-
-            # Process form## � Quick Start (TL;DR)
-
-            pass
-
-    else:```bash
-
-        form = ContactForm()# 1. Create and setup project
-
-    return render(request, 'contact.html', {'form': form})mkdir myproject && cd myproject
-
-```uv init
-
-uv venv
-
-In your template:.venv\Scripts\activate
-
-```html
-
-{% load honeypot %}# 2. Install all packages
-
-uv pip install django pillow django-extensions django-cotton django-tailwind-cli honeypot mysqlclient django-htmx django-browser-reload
-
-<form method="post" class="space-y-4">
-
-    {% csrf_token %}# 3. Create Django project
-
-    {% render_honeypot_field %}django-admin startproject config .
-
-    python manage.py startapp core
-
-    <input type="text" name="name" placeholder="Name" class="input input-bordered w-full">mkdir templates static media
-
-    <input type="email" name="email" placeholder="Email" class="input input-bordered w-full">
-
-    <textarea name="message" placeholder="Message" class="textarea textarea-bordered w-full"></textarea># 4. Setup TailwindCSS
-
-    uv run manage.py tailwind setup
-
-    <button type="submit" class="btn btn-primary">Submit</button>uv run manage.py tailwind build
-
-</form>
-
-```# 5. Run migrations
-
-uv run manage.py migrate
-
----uv run manage.py createsuperuser
-
-
-
-## 🧩 Step 19: Django Cotton Component Usage# 6. Start development server
-
-uv run manage.py tailwind runserver
-
-### Create a component in `templates/cotton/````
-
-
-
-Example: `templates/cotton/button.html`Visit: **http://127.0.0.1:8000/** 🎉
-
-```html
-
-<c-vars primary_color="blue" />---
-
-
-
-<button class="btn btn-{{ primary_color }}">## �🛠️ Troubleshooting
-
-    <c-slot />
-
-</button>### MySQL Connection Issues
-
-```- Make sure MySQL server is running
-
-- Verify database credentials in `settings.py`
-
-### Use in templates- Check if `mysqlclient` is properly installed
-
-```html
-
-<c-button primary_color="primary">### TailwindCSS Not Compiling
-
-    Click Me- Ensure `source.css` exists at `static/css/source.css`
-
-</c-button>- Run `python manage.py tailwind build` manually
-
-- Check for syntax errors in your CSS
-
-<c-button primary_color="secondary">
-
-    Secondary Action### Static Files Not Loading
-
-</c-button>- Run `python manage.py collectstatic`
-
-```- Check `STATIC_URL` and `STATIC_ROOT` in settings
-
-- Ensure `DEBUG = True` for development
-
----
-
-### Import Errors
-
-## 📦 Step 20: Project Structure- Activate virtual environment: `.venv\Scripts\activate`
-
-- Reinstall packages: `uv pip install -r requirements.txt`
-
-Your final project structure should look like this:
-
----
-
-```
-
-myproject/## 📝 Additional Resources
-
-├── .venv/
-
-├── config/- **Django Documentation:** https://docs.djangoproject.com/
-
-│   ├── __init__.py- **TailwindCSS Documentation:** https://tailwindcss.com/docs
-
-│   ├── settings.py- **DaisyUI Components:** https://daisyui.com/components/
-
-│   ├── urls.py- **Django TailwindCSS CLI:** https://github.com/oliverandrich/django-tailwind-cli
-
-│   ├── asgi.py
-
-│   └── wsgi.py---
-
-├── core/
-
-│   ├── migrations/## 🎉 You're All Set!
-
-│   ├── __init__.py
-
-│   ├── admin.pyYour Django project with TailwindCSS and DaisyUI is now ready for development. Start building amazing features!
-
-│   ├── apps.py
-
-│   ├── models.py**Happy Coding! 🚀**
-
-│   ├── tests.py
-│   ├── urls.py
-│   └── views.py
-├── templates/
-│   ├── base.html
-│   ├── core/
-│   │   └── home.html
-│   └── cotton/
-│       └── button.html
-├── static/
-│   ├── css/
-│   │   ├── source.css
-│   │   └── output.css
-│   ├── js/
-│   └── images/
-├── media/
-├── staticfiles/
-├── manage.py
-├── requirements.txt
-└── README.md
-```
-
----
-
-## 🛠️ Troubleshooting
-
-### ❌ MySQL Connection Issues
-**Problem:** Can't connect to MySQL database
-
-**Solutions:**
-- Ensure MySQL server is running
-- Verify database credentials in `settings.py`
-- Check if `mysqlclient` is properly installed
-- Try: `uv pip install mysqlclient --force-reinstall`
-
-### ❌ TailwindCSS Not Compiling
-**Problem:** CSS changes not appearing
-
-**Solutions:**
-- Ensure `source.css` exists at `static/css/source.css`
-- Run `uv run manage.py tailwind build` manually
-- Check for syntax errors in your CSS
-- Delete `static/css/output.css` and rebuild
-
-### ❌ Static Files Not Loading
-**Problem:** CSS/JS not loading in browser
-
-**Solutions:**
-- Run `uv run manage.py collectstatic`
-- Check `STATIC_URL` and `STATIC_ROOT` in settings
-- Ensure `DEBUG = True` for development
-- Add `{% load static %}` to template
-- Clear browser cache
-
-### ❌ Import Errors
-**Problem:** Module not found errors
-
-**Solutions:**
-- Activate virtual environment: `.venv\Scripts\activate`
-- Reinstall packages: `uv pip install -r requirements.txt`
-- Check Python version: `python --version` (should be 3.10+)
-
-### ❌ DaisyUI Not Working
-**Problem:** DaisyUI classes not applying
-
-**Solutions:**
-- Verify `TAILWIND_CLI_USE_DAISY_UI = True` in settings
-- Check `@plugin "daisyui"` is in `source.css`
-- Rebuild CSS: `uv run manage.py tailwind build`
-- Add `data-theme="light"` to `<html>` tag
-
-### ❌ HTMX Not Working
-**Problem:** HTMX requests not working
-
-**Solutions:**
-- Check HTMX script is loaded in template
-- Verify middleware is added: `django_htmx.middleware.HtmxMiddleware`
-- Check view returns proper response for HTMX
-- Use browser DevTools to check network requests
-
-### ❌ Auto-Reload Not Working
-**Problem:** Browser not reloading automatically
-
-**Solutions:**
-- Ensure `django_browser_reload` is in `INSTALLED_APPS`
-- Add middleware: `django_browser_reload.middleware.BrowserReloadMiddleware`
-- Add URL: `path("__reload__/", include("django_browser_reload.urls"))`
-- Check `INTERNAL_IPS = ["127.0.0.1"]` in settings
-
----
-
-## 📝 Development Tips
-
-### 💡 Best Practices
-
-1. **Always use `uv run`** for manage.py commands
-2. **Run `tailwind runserver`** during development for auto-compilation
-3. **Use Alpine.js** for simple interactivity instead of heavy JavaScript
-4. **Use HTMX** for dynamic content loading without full page reloads
-5. **Keep `source.css` clean** - use `@layer` directives
-6. **Test with different themes** - DaisyUI has 28 built-in themes
-7. **Use Django Cotton** for reusable component-based templates
-
-### 🎨 Recommended Workflow
-
-1. Start server with: `uv run manage.py tailwind runserver`
-2. Open browser at: `http://127.0.0.1:8000/`
-3. Edit templates/CSS - browser auto-reloads
-4. Use Alpine.js for UI interactions
-5. Use HTMX for server interactions
-6. Check browser console for errors
-
-### 📦 Creating requirements.txt
-
-```bash
-uv pip freeze > requirements.txt
-```
-
-### 🔄 Installing from requirements.txt
-
-```bash
-uv pip install -r requirements.txt
-```
-
----
-
-## 📝 Additional Resources
-
-### 📖 Documentation
-- **Django Documentation:** https://docs.djangoproject.com/
-- **TailwindCSS Documentation:** https://tailwindcss.com/docs
-- **DaisyUI Components:** https://daisyui.com/components/
-- **Django TailwindCSS CLI:** https://github.com/oliverandrich/django-tailwind-cli
-- **Alpine.js Documentation:** https://alpinejs.dev/
-- **HTMX Documentation:** https://htmx.org/docs/
-- **Django HTMX:** https://django-htmx.readthedocs.io/
-
-### 🎥 Video Tutorials
-- Django Official Tutorial: https://docs.djangoproject.com/en/stable/intro/tutorial01/
-- TailwindCSS Crash Course: YouTube
-- Alpine.js Tutorial: Alpine.js official site
-
-### 🛠️ Tools & Extensions
-- **VS Code Extensions:**
-  - Python
-  - Django
-  - Tailwind CSS IntelliSense
-  - Alpine.js IntelliSense
-  - Better Comments
-
-### 💬 Community Support
-- Django Forum: https://forum.djangoproject.com/
-- Stack Overflow: https://stackoverflow.com/questions/tagged/django
-- Reddit: r/django
-
----
-
-## 🎉 You're All Set!
-
-Your Django project with TailwindCSS, DaisyUI, Alpine.js, and HTMX is now ready for development!
-
-### 🚀 Next Steps
-
-1. ✅ Customize the color scheme in `source.css`
-2. ✅ Create your first model in `core/models.py`
-3. ✅ Build beautiful pages with DaisyUI components
-4. ✅ Add interactivity with Alpine.js and HTMX
-5. ✅ Deploy to production (Heroku, Railway, DigitalOcean)
-
-### 📧 Need Help?
-
-If you encounter issues:
-1. Check the Troubleshooting section above
-2. Review the documentation links
-3. Search on Stack Overflow
-4. Ask in Django forums
-
----
-
-**Happy Coding! 🚀 Built with ❤️ using Django + TailwindCSS + DaisyUI**
-
----
-
-### ⭐ Star This Guide
-
-If this guide helped you, consider sharing it with others!
-
-**Made with 💙 for the Django community**
