@@ -1,548 +1,1093 @@
-# 🌸 Django + Tailwind CLI + DaisyUI Setup Guide# 🌸 Django + Tailwind CLI + DaisyUI Setup Guide
+# 🌸 Django + TailwindCSS + DaisyUI Setup Guide# 🌸 Django + Tailwind CLI + DaisyUI Setup Guide# 🌸 Django + Tailwind CLI + DaisyUI Setup Guide
 
 
 
-> **Complete setup guide for Django with TailwindCSS, DaisyUI, Alpine.js, and HTMX - All without Node.js or npm!**> **Complete setup guide for Django with TailwindCSS, DaisyUI, Alpine.js, and HTMX - All without Node.js or npm!**
+> **Complete Django setup with TailwindCSS, DaisyUI, Alpine.js, and HTMX - No Node.js required!**
 
 
+
+[![Django](https://img.shields.io/badge/Django-5.0+-green.svg)](https://www.djangoproject.com/)> **Complete setup guide for Django with TailwindCSS, DaisyUI, Alpine.js, and HTMX - All without Node.js or npm!**> **Complete setup guide for Django with TailwindCSS, DaisyUI, Alpine.js, and HTMX - All without Node.js or npm!**
+
+[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.4+-blue.svg)](https://tailwindcss.com/)
+
+[![DaisyUI](https://img.shields.io/badge/DaisyUI-4.0+-purple.svg)](https://daisyui.com/)
+
+[![Python](https://img.shields.io/badge/Python-3.10+-yellow.svg)](https://www.python.org/)
 
 [![Django](https://img.shields.io/badge/Django-5.0+-green.svg)](https://www.djangoproject.com/)[![Django](https://img.shields.io/badge/Django-5.0+-green.svg)](https://www.djangoproject.com/)
 
+---
+
 [![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.4+-blue.svg)](https://tailwindcss.com/)[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.4+-blue.svg)](https://tailwindcss.com/)
+
+## 🎯 What You'll Get
 
 [![DaisyUI](https://img.shields.io/badge/DaisyUI-4.0+-purple.svg)](https://daisyui.com/)[![DaisyUI](https://img.shields.io/badge/DaisyUI-4.0+-purple.svg)](https://daisyui.com/)
 
-[![Python](https://img.shields.io/badge/Python-3.10+-yellow.svg)](https://www.python.org/)[![Python](https://img.shields.io/badge/Python-3.10+-yellow.svg)](https://www.python.org/)
+✅ Django 5.0+ with MySQL  
+
+✅ TailwindCSS + DaisyUI (28+ themes)  [![Python](https://img.shields.io/badge/Python-3.10+-yellow.svg)](https://www.python.org/)[![Python](https://img.shields.io/badge/Python-3.10+-yellow.svg)](https://www.python.org/)
+
+✅ Alpine.js + HTMX  
+
+✅ SEO optimized templates  
+
+✅ Dark/Light mode  
+
+✅ Auto browser reload  ------
+
+✅ Security features (Honeypot, CSRF, XSS)  
 
 
 
-------
-
-
+---
 
 ## 📋 Table of Contents## 📋 Table of Contents
 
+## 🚀 Quick Start
 
 
-- [What You'll Get](#-what-youll-get)1. [What You'll Get](#-what-youll-get)
 
-- [Prerequisites](#-prerequisites)2. [Prerequisites](#-prerequisites)
+```bash
+
+# 1. Setup project- [What You'll Get](#-what-youll-get)1. [What You'll Get](#-what-youll-get)
+
+mkdir myproject && cd myproject
+
+uv init && uv venv- [Prerequisites](#-prerequisites)2. [Prerequisites](#-prerequisites)
+
+.venv\Scripts\activate
 
 - [Quick Start](#-quick-start-tldr)3. [Project Setup](#️-step-1-project-setup)
 
-- [Detailed Setup](#detailed-setup-steps)4. [Install Packages](#-step-2-install-all-packages-at-once)
+# 2. Install packages
 
-- [DaisyUI Components](#-using-daisyui-components)5. [Create Django Project](#-step-3-create-django-project)
+uv pip install django pillow django-extensions django-cotton django-tailwind-cli honeypot mysqlclient django-htmx django-browser-reload- [Detailed Setup](#detailed-setup-steps)4. [Install Packages](#-step-2-install-all-packages-at-once)
 
-- [Alpine.js Examples](#-alpinejs-examples)6. [MySQL Setup](#️-step-4-mysql-database-setup)
 
-- [HTMX Examples](#-htmx-examples)7. [Django Settings](#️-step-5-django-settings-configuration)
 
-- [Troubleshooting](#-troubleshooting)8. [TailwindCSS + DaisyUI](#-step-6-tailwindcss--daisyui-setup)
-
-- [Development Tips](#-development-tips)9. [Alpine.js & HTMX](#-step-7-alpinejs--htmx-setup)
-
-- [Additional Resources](#-additional-resources)10. [Base Template](#-step-8-create-base-template-with-seo)
-
-11. [URLs Configuration](#-step-9-configure-urls-for-static-and-media-files)
-
----12. [Static Files](#️-step-10-collect-static-files)
-
-13. [Run Migrations](#-step-11-run-migrations-and-create-superuser)
-
-## 🎯 What You'll Get14. [Start Server](#️-step-12-run-development-server)
-
-15. [DaisyUI Components](#-step-13-using-daisyui-components)
-
-✅ **Django 5.0+** - Modern Python web framework  16. [Alpine.js Examples](#-step-14-alpinejs-examples)
-
-✅ **TailwindCSS** - Utility-first CSS framework (no Node.js!)  17. [HTMX Examples](#-step-15-htmx-examples)
-
-✅ **DaisyUI** - Beautiful UI components for Tailwind (28+ themes)  18. [Additional Resources](#-additional-resources)
-
-✅ **Alpine.js** - Lightweight JavaScript framework  
-
-✅ **HTMX** - High-power tools for HTML  ---
-
-✅ **MySQL** - Production-ready database  
-
-✅ **SEO Optimized** - Comprehensive meta tags  ## 🎯 What You'll Get
-
-✅ **Dark/Light Mode** - Built-in theme switcher  
-
-✅ **Auto Reload** - Browser auto-refresh on changes  ✅ **Django 5.0+** - Modern Python web framework  
-
-✅ **Security** - Honeypot, CSRF, XSS protection  ✅ **TailwindCSS** - Utility-first CSS framework (no Node.js!)  
-
-✅ **DaisyUI** - Beautiful UI components for Tailwind  
-
----✅ **Alpine.js** - Lightweight JavaScript framework  
-
-✅ **HTMX** - High-power tools for HTML  
-
-## ✅ Prerequisites✅ **MySQL** - Production-ready database  
-
-✅ **SEO Optimized** - Comprehensive meta tags  
-
-Before starting, make sure you have:✅ **Dark/Light Mode** - Built-in theme switcher  
-
-✅ **Auto Reload** - Browser auto-refresh on changes  
-
-- **Python 3.10+** installed ([Download](https://www.python.org/downloads/))✅ **Security** - Honeypot, CSRF, XSS protection  
-
-- **uv** package installer ([Install guide](https://github.com/astral-sh/uv))
-
-- **MySQL Server** ([Download](https://dev.mysql.com/downloads/installer/))---
-
-- **Git** (optional, for version control)
-
-## ✅ Prerequisites
-
----
-
-Before starting, make sure you have:
-
-## 🚀 Quick Start (TL;DR)
-
-- **Python 3.10+** installed ([Download](https://www.python.org/downloads/))
-
-```bash- **uv** package installer ([Install guide](https://github.com/astral-sh/uv))
-
-# 1. Create and setup project- **MySQL Server** ([Download](https://dev.mysql.com/downloads/installer/))
-
-mkdir myproject && cd myproject- **Git** (optional, for version control)
-
-uv init
-
-uv venv---
-
-.venv\Scripts\activate
-
-## ⚙️ Step 1: Project Setup
-
-# 2. Install all packages
-
-uv pip install django pillow django-extensions django-cotton django-tailwind-cli honeypot mysqlclient django-htmx django-browser-reload### 1️⃣ Create project folder and initialize environment
-
-```bash
-
-# 3. Create Django projectmkdir myproject
-
-django-admin startproject config .cd myproject
-
-python manage.py startapp coreuv init
-
-mkdir templates static media static\css```
-
-
-
-# 4. Setup TailwindCSS### 2️⃣ Create virtual environment
-
-uv run manage.py tailwind setup```bash
-
-uv run manage.py tailwind builduv venv
-
-.venv\Scripts\activate
-
-# 5. Run migrations```
-
-uv run manage.py migrate
-
-uv run manage.py createsuperuser---
-
-
-
-# 6. Start development server## 📦 Step 2: Install All Packages at Once
-
-uv run manage.py tailwind runserver
-
-```### Install all required packages with uv
-
-```bash
-
-Visit: **http://127.0.0.1:8000/** 🎉uv pip install django pillow django-extensions django-cotton django-tailwind-cli honeypot mysqlclient django-htmx django-browser-reload
-
-```
-
----
-
-**Packages installed:**
-
-# Detailed Setup Steps- `django` - Web framework
-
-- `pillow` - Image processing
-
-## ⚙️ Step 1: Project Setup- `django-extensions` - Useful Django extensions
-
-- `django-cotton` - Component-based templates
-
-### 1️⃣ Create project folder and initialize environment- `django-tailwind-cli` - TailwindCSS without Node.js (with DaisyUI support)
-
-```bash- `honeypot` - Security against spam bots
-
-mkdir myproject- `mysqlclient` - MySQL database connector
-
-cd myproject- `django-htmx` - HTMX integration for Django
-
-uv init- `django-browser-reload` - Auto browser reload in development
-
-```
-
----
-
-### 2️⃣ Create virtual environment
-
-```bash## 🚀 Step 3: Create Django Project
-
-uv venv
-
-.venv\Scripts\activate### 1️⃣ Create Django project and app
-
-``````bash
+# 3. Create Django project- [DaisyUI Components](#-using-daisyui-components)5. [Create Django Project](#-step-3-create-django-project)
 
 django-admin startproject config .
 
----python manage.py startapp core
+python manage.py startapp core- [Alpine.js Examples](#-alpinejs-examples)6. [MySQL Setup](#️-step-4-mysql-database-setup)
+
+mkdir templates static media static\css static\js static\images
+
+- [HTMX Examples](#-htmx-examples)7. [Django Settings](#️-step-5-django-settings-configuration)
+
+# 4. Setup TailwindCSS
+
+uv run manage.py tailwind setup- [Troubleshooting](#-troubleshooting)8. [TailwindCSS + DaisyUI](#-step-6-tailwindcss--daisyui-setup)
+
+uv run manage.py tailwind build
+
+- [Development Tips](#-development-tips)9. [Alpine.js & HTMX](#-step-7-alpinejs--htmx-setup)
+
+# 5. Run migrations
+
+uv run manage.py migrate- [Additional Resources](#-additional-resources)10. [Base Template](#-step-8-create-base-template-with-seo)
+
+uv run manage.py createsuperuser
+
+11. [URLs Configuration](#-step-9-configure-urls-for-static-and-media-files)
+
+# 6. Start server
+
+uv run manage.py tailwind runserver---12. [Static Files](#️-step-10-collect-static-files)
 
 ```
 
-## 📦 Step 2: Install All Packages at Once
+13. [Run Migrations](#-step-11-run-migrations-and-create-superuser)
 
-### 2️⃣ Create required directories
+Visit: **http://127.0.0.1:8000/** 🎉
 
-### Install all required packages with uv```bash
+## 🎯 What You'll Get14. [Start Server](#️-step-12-run-development-server)
 
-```bashmkdir templates
+---
 
-uv pip install django pillow django-extensions django-cotton django-tailwind-cli honeypot mysqlclient django-htmx django-browser-reloadmkdir static
+15. [DaisyUI Components](#-step-13-using-daisyui-components)
 
-```mkdir media
+## 📦 Installation Steps
 
-mkdir static\css
+✅ **Django 5.0+** - Modern Python web framework  16. [Alpine.js Examples](#-step-14-alpinejs-examples)
 
-**Packages installed:**mkdir static\js
+### Step 1: MySQL Database Setup
 
-- `django` - Web frameworkmkdir static\images
+✅ **TailwindCSS** - Utility-first CSS framework (no Node.js!)  17. [HTMX Examples](#-step-15-htmx-examples)
 
-- `pillow` - Image processing```
+Install MySQL from [mysql.com](https://dev.mysql.com/downloads/installer/)
 
-- `django-extensions` - Useful Django extensions
-
-- `django-cotton` - Component-based templates---
-
-- `django-tailwind-cli` - TailwindCSS without Node.js (with DaisyUI support)
-
-- `honeypot` - Security against spam bots## 🗄️ Step 4: MySQL Database Setup
-
-- `mysqlclient` - MySQL database connector
-
-- `django-htmx` - HTMX integration for Django### 1️⃣ Install MySQL Server
-
-- `django-browser-reload` - Auto browser reload in developmentDownload and install MySQL from [https://dev.mysql.com/downloads/installer/](https://dev.mysql.com/downloads/installer/)
-
-
-
----### 2️⃣ Create database
-
-Open MySQL command line:
-
-## 🚀 Step 3: Create Django Project```sql
-
-CREATE DATABASE myproject_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-
-### 1️⃣ Create Django project and appCREATE USER 'myproject_user'@'localhost' IDENTIFIED BY 'your_password';
-
-```bashGRANT ALL PRIVILEGES ON myproject_db.* TO 'myproject_user'@'localhost';
-
-django-admin startproject config .FLUSH PRIVILEGES;
-
-python manage.py startapp coreEXIT;
-
-``````
-
-
-
-### 2️⃣ Create required directories### 3️⃣ Configure database in `config/settings.py`
-
-```bash```python
-
-mkdir templatesDATABASES = {
-
-mkdir static    'default': {
-
-mkdir media        'ENGINE': 'django.db.backends.mysql',
-
-mkdir static\css        'NAME': 'myproject_db',
-
-mkdir static\js        'USER': 'myproject_user',
-
-mkdir static\images        'PASSWORD': 'your_password',
-
-```        'HOST': 'localhost',
-
-        'PORT': '3306',
-
----        'OPTIONS': {
-
-            'charset': 'utf8mb4',
-
-## 🗄️ Step 4: MySQL Database Setup            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
-
-        }
-
-### 1️⃣ Install MySQL Server    }
-
-Download and install MySQL from [https://dev.mysql.com/downloads/installer/](https://dev.mysql.com/downloads/installer/)}
-
-```
-
-### 2️⃣ Create database
-
-Open MySQL command line:---
+✅ **DaisyUI** - Beautiful UI components for Tailwind (28+ themes)  18. [Additional Resources](#-additional-resources)
 
 ```sql
 
-CREATE DATABASE myproject_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;## ⚙️ Step 5: Django Settings Configuration
+CREATE DATABASE myproject_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;✅ **Alpine.js** - Lightweight JavaScript framework  
 
 CREATE USER 'myproject_user'@'localhost' IDENTIFIED BY 'your_password';
 
-GRANT ALL PRIVILEGES ON myproject_db.* TO 'myproject_user'@'localhost';### Update `config/settings.py`
+GRANT ALL PRIVILEGES ON myproject_db.* TO 'myproject_user'@'localhost';✅ **HTMX** - High-power tools for HTML  ---
 
 FLUSH PRIVILEGES;
 
-EXIT;#### 1️⃣ Add apps to INSTALLED_APPS
+```✅ **MySQL** - Production-ready database  
 
-``````python
+
+
+---✅ **SEO Optimized** - Comprehensive meta tags  ## 🎯 What You'll Get
+
+
+
+### Step 2: Django Settings (`config/settings.py`)✅ **Dark/Light Mode** - Built-in theme switcher  
+
+
+
+```python✅ **Auto Reload** - Browser auto-refresh on changes  ✅ **Django 5.0+** - Modern Python web framework  
 
 INSTALLED_APPS = [
 
-### 3️⃣ Configure database in `config/settings.py`    'django.contrib.admin',
+    'django.contrib.admin',✅ **Security** - Honeypot, CSRF, XSS protection  ✅ **TailwindCSS** - Utility-first CSS framework (no Node.js!)  
 
-```python    'django.contrib.auth',
+    'django.contrib.auth',
 
-DATABASES = {    'django.contrib.contenttypes',
+    'django.contrib.contenttypes',✅ **DaisyUI** - Beautiful UI components for Tailwind  
 
-    'default': {    'django.contrib.sessions',
+    'django.contrib.sessions',
 
-        'ENGINE': 'django.db.backends.mysql',    'django.contrib.messages',
+    'django.contrib.messages',---✅ **Alpine.js** - Lightweight JavaScript framework  
 
-        'NAME': 'myproject_db',    'django.contrib.staticfiles',
+    'django.contrib.staticfiles',
 
-        'USER': 'myproject_user',    
+    # Third party✅ **HTMX** - High-power tools for HTML  
 
-        'PASSWORD': 'your_password',    # Third party apps
+    'django_extensions',
 
-        'HOST': 'localhost',    'django_extensions',
+    'django_cotton',## ✅ Prerequisites✅ **MySQL** - Production-ready database  
 
-        'PORT': '3306',    'django_cotton',
+    'django_tailwind_cli',
 
-        'OPTIONS': {    'django_tailwind_cli',
+    'honeypot',✅ **SEO Optimized** - Comprehensive meta tags  
 
-            'charset': 'utf8mb4',    'honeypot',
+    'django_htmx',
 
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",    'django_htmx',
+    'django_browser_reload',Before starting, make sure you have:✅ **Dark/Light Mode** - Built-in theme switcher  
 
-        }    'django_browser_reload',
+    # Local
 
-    }    
-
-}    # Local apps
-
-```    'core',
+    'core',✅ **Auto Reload** - Browser auto-refresh on changes  
 
 ]
 
----```
+- **Python 3.10+** installed ([Download](https://www.python.org/downloads/))✅ **Security** - Honeypot, CSRF, XSS protection  
 
+MIDDLEWARE = [
 
+    'django.middleware.security.SecurityMiddleware',- **uv** package installer ([Install guide](https://github.com/astral-sh/uv))
 
-## ⚙️ Step 5: Django Settings Configuration#### 2️⃣ Add middleware for security
+    'django.contrib.sessions.middleware.SessionMiddleware',
 
-```python
+    'django.middleware.common.CommonMiddleware',- **MySQL Server** ([Download](https://dev.mysql.com/downloads/installer/))---
 
-### Update `config/settings.py`MIDDLEWARE = [
+    'django.middleware.csrf.CsrfViewMiddleware',
 
-    'django.middleware.security.SecurityMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',- **Git** (optional, for version control)
 
-#### 1️⃣ Add apps to INSTALLED_APPS    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
 
-```python    'django.middleware.common.CommonMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',## ✅ Prerequisites
 
-INSTALLED_APPS = [    'django.middleware.csrf.CsrfViewMiddleware',
+    'django_htmx.middleware.HtmxMiddleware',
 
-    'django.contrib.admin',    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django_browser_reload.middleware.BrowserReloadMiddleware',---
 
-    'django.contrib.auth',    'django.contrib.messages.middleware.MessageMiddleware',
+]
 
-    'django.contrib.contenttypes',    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+Before starting, make sure you have:
 
-    'django.contrib.sessions',    'django_htmx.middleware.HtmxMiddleware',  # HTMX support
+TEMPLATES = [
 
-    'django.contrib.messages',    'django_browser_reload.middleware.BrowserReloadMiddleware',  # Auto-reload in development
-
-    'django.contrib.staticfiles',]
-
-    ```
-
-    # Third party apps
-
-    'django_extensions',#### 3️⃣ Configure templates
-
-    'django_cotton',```python
-
-    'django_tailwind_cli',TEMPLATES = [
-
-    'honeypot',    {
-
-    'django_htmx',        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-
-    'django_browser_reload',        'DIRS': [BASE_DIR / 'templates'],
-
-            'APP_DIRS': True,
-
-    # Local apps        'OPTIONS': {
-
-    'core',            'context_processors': [
-
-]                'django.template.context_processors.debug',
-
-```                'django.template.context_processors.request',
-
-                'django.contrib.auth.context_processors.auth',
-
-#### 2️⃣ Add middleware for security                'django.contrib.messages.context_processors.messages',
-
-```python                'django.template.context_processors.media',
-
-MIDDLEWARE = [            ],
-
-    'django.middleware.security.SecurityMiddleware',            'builtins': [
-
-    'django.contrib.sessions.middleware.SessionMiddleware',                'django_cotton.templatetags.cotton',
-
-    'django.middleware.common.CommonMiddleware',            ],
-
-    'django.middleware.csrf.CsrfViewMiddleware',        },
-
-    'django.contrib.auth.middleware.AuthenticationMiddleware',    },
-
-    'django.contrib.messages.middleware.MessageMiddleware',]
-
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',```
-
-    'django_htmx.middleware.HtmxMiddleware',  # HTMX support
-
-    'django_browser_reload.middleware.BrowserReloadMiddleware',  # Auto-reload in development#### 4️⃣ Configure static and media files
-
-]```python
-
-```# Static files (CSS, JavaScript, Images)
-
-STATIC_URL = '/static/'
-
-#### 3️⃣ Configure templatesSTATIC_ROOT = BASE_DIR / 'staticfiles'
-
-```pythonSTATICFILES_DIRS = [
-
-TEMPLATES = [    BASE_DIR / 'static',
-
-    {]
+    {## 🚀 Quick Start (TL;DR)
 
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
 
-        'DIRS': [BASE_DIR / 'templates'],# Media files (User uploads)
+        'DIRS': [BASE_DIR / 'templates'],- **Python 3.10+** installed ([Download](https://www.python.org/downloads/))
 
-        'APP_DIRS': True,MEDIA_URL = '/media/'
+        'APP_DIRS': True,
 
-        'OPTIONS': {MEDIA_ROOT = BASE_DIR / 'media'
+        'OPTIONS': {```bash- **uv** package installer ([Install guide](https://github.com/astral-sh/uv))
+
+            'context_processors': [
+
+                'django.template.context_processors.debug',# 1. Create and setup project- **MySQL Server** ([Download](https://dev.mysql.com/downloads/installer/))
+
+                'django.template.context_processors.request',
+
+                'django.contrib.auth.context_processors.auth',mkdir myproject && cd myproject- **Git** (optional, for version control)
+
+                'django.contrib.messages.context_processors.messages',
+
+                'django.template.context_processors.media',uv init
+
+            ],
+
+            'builtins': ['django_cotton.templatetags.cotton'],uv venv---
+
+        },
+
+    },.venv\Scripts\activate
+
+]
+
+## ⚙️ Step 1: Project Setup
+
+# Database
+
+DATABASES = {# 2. Install all packages
+
+    'default': {
+
+        'ENGINE': 'django.db.backends.mysql',uv pip install django pillow django-extensions django-cotton django-tailwind-cli honeypot mysqlclient django-htmx django-browser-reload### 1️⃣ Create project folder and initialize environment
+
+        'NAME': 'myproject_db',
+
+        'USER': 'myproject_user',```bash
+
+        'PASSWORD': 'your_password',
+
+        'HOST': 'localhost',# 3. Create Django projectmkdir myproject
+
+        'PORT': '3306',
+
+    }django-admin startproject config .cd myproject
+
+}
+
+python manage.py startapp coreuv init
+
+# Static & Media
+
+STATIC_URL = '/static/'mkdir templates static media static\css```
+
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+STATICFILES_DIRS = [BASE_DIR / 'static']
+
+
+
+MEDIA_URL = '/media/'# 4. Setup TailwindCSS### 2️⃣ Create virtual environment
+
+MEDIA_ROOT = BASE_DIR / 'media'
+
+uv run manage.py tailwind setup```bash
+
+# TailwindCSS + DaisyUI
+
+TAILWIND_CLI_PATH = "~/.local/bin/"uv run manage.py tailwind builduv venv
+
+TAILWIND_CLI_VERSION = "latest"
+
+TAILWIND_CLI_AUTOMATIC_DOWNLOAD = True.venv\Scripts\activate
+
+TAILWIND_CLI_USE_DAISY_UI = True
+
+TAILWIND_CLI_SRC_CSS = "static/css/source.css"# 5. Run migrations```
+
+TAILWIND_CLI_DIST_CSS = "static/css/output.css"
+
+uv run manage.py migrate
+
+# Security
+
+SECURE_BROWSER_XSS_FILTER = Trueuv run manage.py createsuperuser---
+
+SECURE_CONTENT_TYPE_NOSNIFF = True
+
+X_FRAME_OPTIONS = 'DENY'
+
+HONEYPOT_FIELD_NAME = 'email_confirm'
+
+# 6. Start development server## 📦 Step 2: Install All Packages at Once
+
+# Development
+
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']uv run manage.py tailwind runserver
+
+INTERNAL_IPS = ["127.0.0.1"]
+
+``````### Install all required packages with uv
+
+
+
+---```bash
+
+
+
+### Step 3: TailwindCSS ConfigurationVisit: **http://127.0.0.1:8000/** 🎉uv pip install django pillow django-extensions django-cotton django-tailwind-cli honeypot mysqlclient django-htmx django-browser-reload
+
+
+
+Create `static/css/source.css`:```
+
+
+
+```css---
+
+/* Import TailwindCSS */
+
+@import "tailwindcss";**Packages installed:**
+
+
+
+/* DaisyUI Plugin */# Detailed Setup Steps- `django` - Web framework
+
+@plugin "daisyui" {
+
+    themes: ["light", "dark", "cupcake", "synthwave", "retro", "cyberpunk"];- `pillow` - Image processing
+
+};
+
+## ⚙️ Step 1: Project Setup- `django-extensions` - Useful Django extensions
+
+/* Custom Variables */
+
+@layer base {- `django-cotton` - Component-based templates
+
+  :root {
+
+    --color-bg-primary: 255 255 255;### 1️⃣ Create project folder and initialize environment- `django-tailwind-cli` - TailwindCSS without Node.js (with DaisyUI support)
+
+    --color-bg-secondary: 249 250 251;
+
+    --color-text-primary: 17 24 39;```bash- `honeypot` - Security against spam bots
+
+    --color-text-secondary: 75 85 99;
+
+    --color-primary: 59 130 246;mkdir myproject- `mysqlclient` - MySQL database connector
+
+    --color-secondary: 139 92 246;
+
+  }cd myproject- `django-htmx` - HTMX integration for Django
+
+
+
+  .dark {uv init- `django-browser-reload` - Auto browser reload in development
+
+    --color-bg-primary: 17 24 39;
+
+    --color-bg-secondary: 31 41 55;```
+
+    --color-text-primary: 243 244 246;
+
+    --color-text-secondary: 209 213 219;---
+
+    --color-primary: 96 165 250;
+
+    --color-secondary: 167 139 250;### 2️⃣ Create virtual environment
+
+  }
+
+}```bash## 🚀 Step 3: Create Django Project
+
+
+
+@layer components {uv venv
+
+  .container {
+
+    @apply mx-auto px-4 sm:px-6 lg:px-8;.venv\Scripts\activate### 1️⃣ Create Django project and app
+
+    max-width: 1280px;
+
+  }``````bash
+
+}
+
+```django-admin startproject config .
+
+
+
+------python manage.py startapp core
+
+
+
+### Step 4: URLs Configuration```
+
+
+
+**`config/urls.py`:**## 📦 Step 2: Install All Packages at Once
+
+```python
+
+from django.contrib import admin### 2️⃣ Create required directories
+
+from django.urls import path, include
+
+from django.conf import settings### Install all required packages with uv```bash
+
+from django.conf.urls.static import static
+
+```bashmkdir templates
+
+urlpatterns = [
+
+    path('admin/', admin.site.urls),uv pip install django pillow django-extensions django-cotton django-tailwind-cli honeypot mysqlclient django-htmx django-browser-reloadmkdir static
+
+    path('', include('core.urls')),
+
+    path("__reload__/", include("django_browser_reload.urls")),```mkdir media
+
+]
+
+mkdir static\css
+
+if settings.DEBUG:
+
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)**Packages installed:**mkdir static\js
+
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+```- `django` - Web frameworkmkdir static\images
+
+
+
+**`core/urls.py`:**- `pillow` - Image processing```
+
+```python
+
+from django.urls import path- `django-extensions` - Useful Django extensions
+
+from . import views
+
+- `django-cotton` - Component-based templates---
+
+app_name = 'core'
+
+- `django-tailwind-cli` - TailwindCSS without Node.js (with DaisyUI support)
+
+urlpatterns = [
+
+    path('', views.home, name='home'),- `honeypot` - Security against spam bots## 🗄️ Step 4: MySQL Database Setup
+
+]
+
+```- `mysqlclient` - MySQL database connector
+
+
+
+**`core/views.py`:**- `django-htmx` - HTMX integration for Django### 1️⃣ Install MySQL Server
+
+```python
+
+from django.shortcuts import render- `django-browser-reload` - Auto browser reload in developmentDownload and install MySQL from [https://dev.mysql.com/downloads/installer/](https://dev.mysql.com/downloads/installer/)
+
+
+
+def home(request):
+
+    return render(request, 'core/home.html')
+
+```---### 2️⃣ Create database
+
+
+
+---Open MySQL command line:
+
+
+
+### Step 5: Templates## 🚀 Step 3: Create Django Project```sql
+
+
+
+Create directory structure:CREATE DATABASE myproject_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+```bash
+
+mkdir templates\core### 1️⃣ Create Django project and appCREATE USER 'myproject_user'@'localhost' IDENTIFIED BY 'your_password';
+
+mkdir templates\includes
+
+``````bashGRANT ALL PRIVILEGES ON myproject_db.* TO 'myproject_user'@'localhost';
+
+
+
+**`templates/base.html`:**django-admin startproject config .FLUSH PRIVILEGES;
+
+```html
+
+{% load static %}python manage.py startapp coreEXIT;
+
+{% load tailwind_cli %}
+
+``````
+
+<!DOCTYPE html>
+
+<html lang="en" data-theme="light">
+
+<head>
+
+    <meta charset="UTF-8">### 2️⃣ Create required directories### 3️⃣ Configure database in `config/settings.py`
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}My Django App{% endblock %} | Your Brand</title>```bash```python
+
+    
+
+    <!-- SEO -->mkdir templatesDATABASES = {
+
+    <meta name="description" content="{% block description %}Django app with TailwindCSS and DaisyUI{% endblock %}">
+
+    <meta name="robots" content="index, follow">mkdir static    'default': {
+
+    
+
+    <!-- TailwindCSS -->mkdir media        'ENGINE': 'django.db.backends.mysql',
+
+    {% tailwind_css %}
+
+    mkdir static\css        'NAME': 'myproject_db',
+
+    <!-- Alpine.js & HTMX -->
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>mkdir static\js        'USER': 'myproject_user',
+
+    <script src="https://unpkg.com/htmx.org@2.0.3"></script>
+
+    mkdir static\images        'PASSWORD': 'your_password',
+
+    {% block extra_css %}{% endblock %}
+
+</head>```        'HOST': 'localhost',
+
+
+
+<body class="bg-base-100" x-data="{ darkMode: false }" :data-theme="darkMode ? 'dark' : 'light'">        'PORT': '3306',
+
+    <!-- Navbar -->
+
+    {% include 'includes/navbar.html' %}---        'OPTIONS': {
+
+    
+
+    <!-- Main Content -->            'charset': 'utf8mb4',
+
+    <main class="min-h-screen">
+
+        <!-- Messages -->## 🗄️ Step 4: MySQL Database Setup            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+
+        {% if messages %}
+
+        <div class="container mx-auto px-4 py-4">        }
+
+            {% for message in messages %}
+
+            <div class="alert alert-{{ message.tags|default:'info' }} mb-2">### 1️⃣ Install MySQL Server    }
+
+                {{ message }}
+
+            </div>Download and install MySQL from [https://dev.mysql.com/downloads/installer/](https://dev.mysql.com/downloads/installer/)}
+
+            {% endfor %}
+
+        </div>```
+
+        {% endif %}
+
+        ### 2️⃣ Create database
+
+        {% block content %}{% endblock %}
+
+    </main>Open MySQL command line:---
+
+    
+
+    <!-- Footer -->```sql
+
+    {% include 'includes/footer.html' %}
+
+    CREATE DATABASE myproject_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;## ⚙️ Step 5: Django Settings Configuration
+
+    {% block extra_js %}{% endblock %}
+
+</body>CREATE USER 'myproject_user'@'localhost' IDENTIFIED BY 'your_password';
+
+</html>
+
+```GRANT ALL PRIVILEGES ON myproject_db.* TO 'myproject_user'@'localhost';### Update `config/settings.py`
+
+
+
+**`templates/includes/navbar.html`:**FLUSH PRIVILEGES;
+
+```html
+
+<div class="navbar bg-base-200" x-data="{ mobileMenu: false }">EXIT;#### 1️⃣ Add apps to INSTALLED_APPS
+
+    <div class="container mx-auto">
+
+        <div class="flex-1">``````python
+
+            <a href="/" class="btn btn-ghost text-xl">YourLogo</a>
+
+        </div>INSTALLED_APPS = [
+
+        
+
+        <div class="flex-none hidden md:flex">### 3️⃣ Configure database in `config/settings.py`    'django.contrib.admin',
+
+            <ul class="menu menu-horizontal px-1">
+
+                <li><a href="/">Home</a></li>```python    'django.contrib.auth',
+
+                <li><a href="#">About</a></li>
+
+                <li><a href="#">Services</a></li>DATABASES = {    'django.contrib.contenttypes',
+
+                <li><a href="#">Contact</a></li>
+
+            </ul>    'default': {    'django.contrib.sessions',
+
+        </div>
+
+                'ENGINE': 'django.db.backends.mysql',    'django.contrib.messages',
+
+        <!-- Dark Mode Toggle -->
+
+        <button @click="darkMode = !darkMode" class="btn btn-ghost btn-circle">        'NAME': 'myproject_db',    'django.contrib.staticfiles',
+
+            <svg x-show="!darkMode" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+
+                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>        'USER': 'myproject_user',    
+
+            </svg>
+
+            <svg x-show="darkMode" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">        'PASSWORD': 'your_password',    # Third party apps
+
+                <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0z"></path>
+
+            </svg>        'HOST': 'localhost',    'django_extensions',
+
+        </button>
+
+                'PORT': '3306',    'django_cotton',
+
+        <!-- Mobile Menu -->
+
+        <button @click="mobileMenu = !mobileMenu" class="btn btn-ghost md:hidden">        'OPTIONS': {    'django_tailwind_cli',
+
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>            'charset': 'utf8mb4',    'honeypot',
+
+            </svg>
+
+        </button>            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",    'django_htmx',
+
+    </div>
+
+            }    'django_browser_reload',
+
+    <!-- Mobile Dropdown -->
+
+    <div x-show="mobileMenu" class="md:hidden">    }    
+
+        <ul class="menu menu-sm">
+
+            <li><a>Home</a></li>}    # Local apps
+
+            <li><a>About</a></li>
+
+            <li><a>Services</a></li>```    'core',
+
+            <li><a>Contact</a></li>
+
+        </ul>]
+
+    </div>
+
+</div>---```
+
+```
+
+
+
+**`templates/includes/footer.html`:**
+
+```html## ⚙️ Step 5: Django Settings Configuration#### 2️⃣ Add middleware for security
+
+<footer class="footer footer-center p-10 bg-base-200 text-base-content">
+
+    <aside>```python
+
+        <p class="font-bold text-xl">Your Brand Name</p>
+
+        <p>Quality web solutions since 2025</p>### Update `config/settings.py`MIDDLEWARE = [
+
+    </aside>
+
+    <nav>    'django.middleware.security.SecurityMiddleware',
+
+        <div class="grid grid-flow-col gap-4">
+
+            <a class="link link-hover">About</a>#### 1️⃣ Add apps to INSTALLED_APPS    'django.contrib.sessions.middleware.SessionMiddleware',
+
+            <a class="link link-hover">Contact</a>
+
+            <a class="link link-hover">Privacy</a>```python    'django.middleware.common.CommonMiddleware',
+
+            <a class="link link-hover">Terms</a>
+
+        </div>INSTALLED_APPS = [    'django.middleware.csrf.CsrfViewMiddleware',
+
+    </nav>
+
+    <aside>    'django.contrib.admin',    'django.contrib.auth.middleware.AuthenticationMiddleware',
+
+        <p>© 2025 Your Brand. All rights reserved.</p>
+
+    </aside>    'django.contrib.auth',    'django.contrib.messages.middleware.MessageMiddleware',
+
+</footer>
+
+```    'django.contrib.contenttypes',    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+
+
+**`templates/core/home.html`:**    'django.contrib.sessions',    'django_htmx.middleware.HtmxMiddleware',  # HTMX support
+
+```html
+
+{% extends 'base.html' %}    'django.contrib.messages',    'django_browser_reload.middleware.BrowserReloadMiddleware',  # Auto-reload in development
+
+
+
+{% block title %}Home{% endblock %}    'django.contrib.staticfiles',]
+
+
+
+{% block content %}    ```
+
+<div class="hero min-h-screen bg-base-200">
+
+    <div class="hero-content text-center">    # Third party apps
+
+        <div class="max-w-md">
+
+            <h1 class="text-5xl font-bold text-primary">Welcome to Django!</h1>    'django_extensions',#### 3️⃣ Configure templates
+
+            <p class="py-6 text-lg">
+
+                Built with <span class="badge badge-primary">Django</span>     'django_cotton',```python
+
+                <span class="badge badge-secondary">TailwindCSS</span> 
+
+                <span class="badge badge-accent">DaisyUI</span>    'django_tailwind_cli',TEMPLATES = [
+
+            </p>
+
+            <div class="flex gap-4 justify-center">    'honeypot',    {
+
+                <button class="btn btn-primary">Get Started</button>
+
+                <button class="btn btn-outline">Learn More</button>    'django_htmx',        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+
+            </div>
+
+        </div>    'django_browser_reload',        'DIRS': [BASE_DIR / 'templates'],
+
+    </div>
+
+</div>            'APP_DIRS': True,
+
+
+
+<!-- Features Section -->    # Local apps        'OPTIONS': {
+
+<div class="container mx-auto py-16 px-4">
+
+    <h2 class="text-4xl font-bold text-center mb-12">Features</h2>    'core',            'context_processors': [
+
+    
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">]                'django.template.context_processors.debug',
+
+        <div class="card bg-base-100 shadow-xl">
+
+            <div class="card-body items-center text-center">```                'django.template.context_processors.request',
+
+                <div class="text-4xl mb-4">⚡</div>
+
+                <h3 class="card-title">Fast Setup</h3>                'django.contrib.auth.context_processors.auth',
+
+                <p>No Node.js or npm required</p>
+
+            </div>#### 2️⃣ Add middleware for security                'django.contrib.messages.context_processors.messages',
+
+        </div>
+
+        ```python                'django.template.context_processors.media',
+
+        <div class="card bg-base-100 shadow-xl">
+
+            <div class="card-body items-center text-center">MIDDLEWARE = [            ],
+
+                <div class="text-4xl mb-4">🎨</div>
+
+                <h3 class="card-title">Beautiful UI</h3>    'django.middleware.security.SecurityMiddleware',            'builtins': [
+
+                <p>TailwindCSS + DaisyUI components</p>
+
+            </div>    'django.contrib.sessions.middleware.SessionMiddleware',                'django_cotton.templatetags.cotton',
+
+        </div>
+
+            'django.middleware.common.CommonMiddleware',            ],
+
+        <div class="card bg-base-100 shadow-xl">
+
+            <div class="card-body items-center text-center">    'django.middleware.csrf.CsrfViewMiddleware',        },
+
+                <div class="text-4xl mb-4">🔒</div>
+
+                <h3 class="card-title">Secure</h3>    'django.contrib.auth.middleware.AuthenticationMiddleware',    },
+
+                <p>Built-in security features</p>
+
+            </div>    'django.contrib.messages.middleware.MessageMiddleware',]
+
+        </div>
+
+    </div>    'django.middleware.clickjacking.XFrameOptionsMiddleware',```
+
+</div>
+
+{% endblock %}    'django_htmx.middleware.HtmxMiddleware',  # HTMX support
+
+```
+
+    'django_browser_reload.middleware.BrowserReloadMiddleware',  # Auto-reload in development#### 4️⃣ Configure static and media files
+
+---
+
+]```python
+
+## 🎨 DaisyUI Components
+
+```# Static files (CSS, JavaScript, Images)
+
+**Buttons:**
+
+```htmlSTATIC_URL = '/static/'
+
+<button class="btn btn-primary">Primary</button>
+
+<button class="btn btn-secondary">Secondary</button>#### 3️⃣ Configure templatesSTATIC_ROOT = BASE_DIR / 'staticfiles'
+
+<button class="btn btn-accent">Accent</button>
+
+``````pythonSTATICFILES_DIRS = [
+
+
+
+**Cards:**TEMPLATES = [    BASE_DIR / 'static',
+
+```html
+
+<div class="card bg-base-100 shadow-xl">    {]
+
+    <div class="card-body">
+
+        <h2 class="card-title">Card Title</h2>        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+
+        <p>Card content</p>
+
+        <div class="card-actions">        'DIRS': [BASE_DIR / 'templates'],# Media files (User uploads)
+
+            <button class="btn btn-primary">Action</button>
+
+        </div>        'APP_DIRS': True,MEDIA_URL = '/media/'
+
+    </div>
+
+</div>        'OPTIONS': {MEDIA_ROOT = BASE_DIR / 'media'
+
+```
 
             'context_processors': [```
 
-                'django.template.context_processors.debug',
+**Alerts:**
 
-                'django.template.context_processors.request',#### 5️⃣ Add security settings
+```html                'django.template.context_processors.debug',
 
-                'django.contrib.auth.context_processors.auth',```python
+<div class="alert alert-success">Success message!</div>
 
-                'django.contrib.messages.context_processors.messages',# Security Settings
+<div class="alert alert-warning">Warning message!</div>                'django.template.context_processors.request',#### 5️⃣ Add security settings
 
-                'django.template.context_processors.media',SECURE_BROWSER_XSS_FILTER = True
+<div class="alert alert-error">Error message!</div>
 
-            ],SECURE_CONTENT_TYPE_NOSNIFF = True
+```                'django.contrib.auth.context_processors.auth',```python
 
-            'builtins': [X_FRAME_OPTIONS = 'DENY'
 
-                'django_cotton.templatetags.cotton',CSRF_COOKIE_SECURE = False  # Set True in production with HTTPS
 
-            ],SESSION_COOKIE_SECURE = False  # Set True in production with HTTPS
+More components: [daisyui.com/components](https://daisyui.com/components/)                'django.contrib.messages.context_processors.messages',# Security Settings
 
-        },SECURE_SSL_REDIRECT = False  # Set True in production with HTTPS
 
-    },
 
-]# Honeypot settings
+---                'django.template.context_processors.media',SECURE_BROWSER_XSS_FILTER = True
 
-```HONEYPOT_FIELD_NAME = 'email_confirm'
+
+
+## ⚡ Alpine.js Examples            ],SECURE_CONTENT_TYPE_NOSNIFF = True
+
+
+
+**Toggle:**            'builtins': [X_FRAME_OPTIONS = 'DENY'
+
+```html
+
+<div x-data="{ open: false }">                'django_cotton.templatetags.cotton',CSRF_COOKIE_SECURE = False  # Set True in production with HTTPS
+
+    <button @click="open = !open" class="btn btn-primary">Toggle</button>
+
+    <div x-show="open" class="alert mt-4">Content!</div>            ],SESSION_COOKIE_SECURE = False  # Set True in production with HTTPS
+
+</div>
+
+```        },SECURE_SSL_REDIRECT = False  # Set True in production with HTTPS
+
+
+
+**Counter:**    },
+
+```html
+
+<div x-data="{ count: 0 }">]# Honeypot settings
+
+    <button @click="count++" class="btn">+</button>
+
+    <span x-text="count"></span>```HONEYPOT_FIELD_NAME = 'email_confirm'
+
+    <button @click="count--" class="btn">-</button>
+
+</div>```
 
 ```
 
 #### 4️⃣ Configure static and media files
 
+---
+
 ```python#### 6️⃣ Configure allowed hosts
+
+## 🔥 HTMX Examples
 
 # Static files (CSS, JavaScript, Images)```python
 
-STATIC_URL = '/static/'ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+**Load Content:**
 
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+```htmlSTATIC_URL = '/static/'ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
-STATICFILES_DIRS = [# Browser reload configuration (for development only)
+<button hx-get="/load-data/" hx-target="#result" class="btn btn-primary">
 
-    BASE_DIR / 'static',INTERNAL_IPS = [
+    Load DataSTATIC_ROOT = BASE_DIR / 'staticfiles'
 
-]    "127.0.0.1",
+</button>
 
-]
-
-# Media files (User uploads)```
-
-MEDIA_URL = '/media/'
-
-MEDIA_ROOT = BASE_DIR / 'media'---
+<div id="result"></div>STATICFILES_DIRS = [# Browser reload configuration (for development only)
 
 ```
 
-## 🎨 Step 6: TailwindCSS + DaisyUI Setup
+    BASE_DIR / 'static',INTERNAL_IPS = [
 
-#### 5️⃣ Add security settings
+**Django View:**
 
-```python### 1️⃣ Add TailwindCSS CLI settings to `config/settings.py`
+```python]    "127.0.0.1",
 
-# Security Settings```python
+def load_data(request):
+
+    if request.htmx:]
+
+        return render(request, 'partials/data.html')
+
+    return render(request, 'full_page.html')# Media files (User uploads)```
+
+```
+
+MEDIA_URL = '/media/'
+
+---
+
+MEDIA_ROOT = BASE_DIR / 'media'---
+
+## 🛠️ Troubleshooting
+
+```
+
+### MySQL Connection Error
+
+- Ensure MySQL is running## 🎨 Step 6: TailwindCSS + DaisyUI Setup
+
+- Check credentials in `settings.py`
+
+- Try: `uv pip install mysqlclient --force-reinstall`#### 5️⃣ Add security settings
+
+
+
+### TailwindCSS Not Working```python### 1️⃣ Add TailwindCSS CLI settings to `config/settings.py`
+
+- Run: `uv run manage.py tailwind build`
+
+- Check `source.css` exists in `static/css/`# Security Settings```python
+
+- Verify `TAILWIND_CLI_USE_DAISY_UI = True` in settings
 
 SECURE_BROWSER_XSS_FILTER = True# TailwindCSS CLI Configuration
 
-SECURE_CONTENT_TYPE_NOSNIFF = TrueTAILWIND_CLI_PATH = "~/.local/bin/"  # Will auto-download
+### Static Files Not Loading
 
-X_FRAME_OPTIONS = 'DENY'TAILWIND_CLI_VERSION = "latest"
+- Run: `uv run manage.py collectstatic`SECURE_CONTENT_TYPE_NOSNIFF = TrueTAILWIND_CLI_PATH = "~/.local/bin/"  # Will auto-download
 
-CSRF_COOKIE_SECURE = False  # Set True in production with HTTPSTAILWIND_CLI_AUTOMATIC_DOWNLOAD = True
+- Check `{% load static %}` in template
 
-SESSION_COOKIE_SECURE = False  # Set True in production with HTTPS
+- Ensure `DEBUG = True` for developmentX_FRAME_OPTIONS = 'DENY'TAILWIND_CLI_VERSION = "latest"
 
-SECURE_SSL_REDIRECT = False  # Set True in production with HTTPS# Enable DaisyUI
 
-TAILWIND_CLI_USE_DAISY_UI = True
 
-# Honeypot settings
+---CSRF_COOKIE_SECURE = False  # Set True in production with HTTPSTAILWIND_CLI_AUTOMATIC_DOWNLOAD = True
 
-HONEYPOT_FIELD_NAME = 'email_confirm'# TailwindCSS source and destination
 
-```TAILWIND_CLI_SRC_CSS = "static/css/source.css"
 
-TAILWIND_CLI_DIST_CSS = "static/css/output.css"
+## 📚 ResourcesSESSION_COOKIE_SECURE = False  # Set True in production with HTTPS
 
-#### 6️⃣ Configure allowed hosts and browser reload```
+
+
+- **Django:** [docs.djangoproject.com](https://docs.djangoproject.com/)SECURE_SSL_REDIRECT = False  # Set True in production with HTTPS# Enable DaisyUI
+
+- **TailwindCSS:** [tailwindcss.com](https://tailwindcss.com/)
+
+- **DaisyUI:** [daisyui.com](https://daisyui.com/)TAILWIND_CLI_USE_DAISY_UI = True
+
+- **Alpine.js:** [alpinejs.dev](https://alpinejs.dev/)
+
+- **HTMX:** [htmx.org](https://htmx.org/)# Honeypot settings
+
+
+
+---HONEYPOT_FIELD_NAME = 'email_confirm'# TailwindCSS source and destination
+
+
+
+## 🎉 You're Ready!```TAILWIND_CLI_SRC_CSS = "static/css/source.css"
+
+
+
+Start building amazing Django applications! 🚀TAILWIND_CLI_DIST_CSS = "static/css/output.css"
+
+
+
+**Made with ❤️ for the Django community**#### 6️⃣ Configure allowed hosts and browser reload```
+
 
 ```python
 
