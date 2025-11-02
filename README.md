@@ -122,9 +122,9 @@ uv run manage.py startapp core
 ### Create necessary directories
 ```bash
 mkdir templates
-mkdir templates\core
+mkdir templates/core
 mkdir static
-mkdir static\css
+mkdir static/css
 mkdir media
 ```
 
