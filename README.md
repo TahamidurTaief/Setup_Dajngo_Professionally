@@ -76,8 +76,13 @@ uv init && uv venv
 ```
 
 ### Activate the virtual environment
+####Windows OS
 ```bash
-source .venv\Scripts\activate
+source .venv/Scripts/activate
+```
+####Linux OS
+```bash
+source .venv/bin/activate
 ```
 
 ### Step 2: Install Dependencies
