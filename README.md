@@ -57,46 +57,7 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 
 ---
 
-## 🚀 Quick Start
-
-```bash
-mkdir myproject && cd myproject
-```
-
-```bash
-uv init && uv venv
-```
-## Activate virtual environment
-#### Windows PowerShell:
-```bash
-source .venv\Scripts\activate
-```
-#### macOS/Linux:
-```bash
-source .venv/bin/activate
-```
-
-## Install dependencies
-```bash
-uv add django pillow django-extensions django-cotton django-tailwind-cli honeypot mysqlclient django-htmx django-browser-reload django-jazzmin
-```
-
-## Create Django project
-```bash
-django-admin startproject config .
-```
-
-### Create core app
-```bash
-python manage.py startapp core
-```
-
-### Create required directories
-```bash
-mkdir templates, templates/core, static, static/css, media
-```
-
----
+# 🚀 Quick Start
 
 ## 📝 Installation Steps
 
@@ -124,7 +85,7 @@ source .venv\Scripts\activate
 *Install all required packages in one command:*
 
 ```bash
-uv pip install django pillow django-extensions django-cotton django-tailwind-cli honeypot mysqlclient django-htmx django-browser-reload django-jazzmin
+uv add django pillow django-extensions django-cotton django-tailwind-cli honeypot mysqlclient django-htmx django-browser-reload django-jazzmin
 ```
 
 **Packages Installed:**
@@ -148,6 +109,9 @@ django-admin startproject config .
 ### Create the core app
 ```bash
 python manage.py startapp core
+```
+```bash
+uv run manage.py startapp core
 ```
 
 ### Create necessary directories
