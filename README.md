@@ -90,7 +90,7 @@ source .venv/bin/activate
 *Install all required packages in one command:*
 
 ```bash
-uv add django pillow django-extensions django-cotton django-tailwind-cli honeypot mysqlclient django-htmx django-browser-reload django-jazzmin
+uv add django pillow django-extensions django-cotton django-tailwind-cli honeypot django-htmx django-browser-reload django-jazzmin
 ```
 
 **Packages Installed:**
@@ -207,6 +207,8 @@ TEMPLATES = [
 #### Static & Media Files
 
 ```python
+import os
+
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
@@ -215,21 +217,63 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 ```
 
-
-#### Additional Settings
-
+#### CSRF and Session and Security Settings:
 ```python
+# CSRF Trusted Origins - For POST requests from these domains
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost:8000",
+    "http://127.0.0.1:8000",
+    "https://alayla-issl.onrender.com/",
+    "https://alayla.onrender.com",
+    "https://alaylatourism.com",
+]
+
+
+# CSRF Cookie Settings
+CSRF_COOKIE_SECURE = False  # Set to True in production with HTTPS
+CSRF_COOKIE_HTTPONLY = False  # Allow JavaScript to read CSRF cookie if needed
+CSRF_COOKIE_SAMESITE = 'Lax'  # 'Lax', 'Strict', or 'None'
+CSRF_USE_SESSIONS = False  # Use cookies instead of sessions for CSRF token
+
+# Session Cookie Settings
+SESSION_COOKIE_SECURE = False  # Set to True in production with HTTPS
+SESSION_COOKIE_HTTPONLY = True  # Prevent JavaScript from accessing session cookie
+SESSION_COOKIE_SAMESITE = 'Lax'
+
+# Security Headers (for production)
+SECURE_BROWSER_XSS_FILTER = True
+SECURE_CONTENT_TYPE_NOSNIFF = True
+X_FRAME_OPTIONS = 'SAMEORIGIN'  # Allow framing from same origin
+
+
+# Security Settings
+SECURE_BROWSER_XSS_FILTER = True
+SECURE_CONTENT_TYPE_NOSNIFF = True
+X_FRAME_OPTIONS = 'DENY'
+CSRF_COOKIE_SECURE = False  # Set True in production with HTTPS
+SESSION_COOKIE_SECURE = False  # Set True in production with HTTPS
+SECURE_SSL_REDIRECT = False  # Set True in production with HTTPS
+
+# Honeypot settings
+HONEYPOT_FIELD_NAME = 'email_confirm'
+
 # For browser reload
 INTERNAL_IPS = ["127.0.0.1"]
 
 # Anti-spam honeypot
 HONEYPOT_FIELD_NAME = 'email_confirm'
+```
 
-# Jazzmin admin customization
-JAZZMIN_SETTINGS = {
-    "site_title": "My Admin",
-    "site_header": "My Admin",
-}
+#### ImakeKit Configuration
+
+```python
+
+# ImageKit Configuration
+IMAGEKIT_DEFAULT_CACHEFILE_BACKEND = 'imagekit.cachefiles.backends.Simple'
+IMAGEKIT_CACHEFILE_DIR = 'CACHE/images'
+IMAGEKIT_DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
+IMAGEKIT_SPEC_CACHEFILE_NAMER = 'imagekit.cachefiles.namers.source_name_as_path'
+
 ```
 
 ---
