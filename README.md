@@ -75,12 +75,12 @@ mkdir myproject && cd myproject
 uv init && uv venv
 ```
 
-### Activate the virtual environment
-####Windows OS
+## Activate the virtual environment
+#### Windows OS
 ```bash
 source .venv/Scripts/activate
 ```
-####Linux OS
+#### Linux OS
 ```bash
 source .venv/bin/activate
 ```
@@ -90,7 +90,7 @@ source .venv/bin/activate
 *Install all required packages in one command:*
 
 ```bash
-uv add django pillow django-extensions django-cotton django-tailwind-cli honeypot django-htmx django-browser-reload django-jazzmin
+uv add django pillow django-extensions django-cotton django-tailwind-cli honeypot django-htmx django-browser-reload django-jazzmin whitenoise
 ```
 
 **Packages Installed:**
@@ -103,7 +103,8 @@ uv add django pillow django-extensions django-cotton django-tailwind-cli honeypo
 - `mysqlclient` - MySQL database connector
 - `django-htmx` - HTMX integration
 - `django-browser-reload` - Live reload
-- `django-jazzmin` - Modern admin interface
+- `django-jazzmin` - Modern admin 
+- `whitenoise` - Dynamicly handle staic files in server.
 
 ### Step 3: Create Django Project Structure
 
@@ -170,6 +171,7 @@ TAILWIND_CLI_USE_DAISY_UI = True
 ```python
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -215,6 +217,12 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+STORAGES = {
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
 ```
 
 #### CSRF and Session and Security Settings:
@@ -655,6 +663,10 @@ uv run manage.py tailwind build
 #### Run database migrations
 ```bash
 uv run manage.py migrate
+```
+#### Run collectstatic
+```bash
+uv run manage.py collectstatic
 ```
 
 #### Create superuser for admin access
